@@ -2,19 +2,19 @@
 // Devolver el nombre de la variable guardada
 void dar_variable (variable var, strings &str)
 {
-    strcop(str,var.valor);
+    strcop(str,var.var);
 }
 
 // Devolver el valor de la variable guardada
 int dar_valor_var (variable var)
 {
-    return var.val_asig;
+    return var.valor;
 }
 
 // Cargar la variable
 void Cargar_variable (variable &var, strings nom, int val)
 {
-    strcop(var.valor,nom);
+    strcop(var.var,nom);
     var.valor=val;
 }
 
