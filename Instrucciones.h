@@ -10,7 +10,7 @@
 
 typedef struct {tipo_instruccion discriminante;
                 union  {strings variable1;
-                        strings variable1;
+                        strings variable2;
                         asig_val asig1;
                         asig_var asig2;
                         func_valval asig3;

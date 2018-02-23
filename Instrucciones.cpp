@@ -6,7 +6,6 @@ void Cargar_instruccion (instruccion &i);
 {
     fflush (stdin);
     strcrear(i.instruccion);
-    printf("Ingrese una instruccion: ");
     scan(i.instruccion)
 
 }
