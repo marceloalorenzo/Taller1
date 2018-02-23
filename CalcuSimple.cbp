@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CalcuSimple" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CalcuSimple" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CalcuSimple" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="ABB_Variables.h" />
+		<Unit filename="Archivo.h" />
+		<Unit filename="Asig_Val.cpp" />
+		<Unit filename="Asig_Val.h" />
+		<Unit filename="Asig_Var.cpp" />
+		<Unit filename="Asig_Var.h" />
+		<Unit filename="Boolean.cpp" />
+		<Unit filename="Boolean.h" />
+		<Unit filename="Comando.h" />
+		<Unit filename="Compilar.h" />
+		<Unit filename="Ejecutar.h" />
+		<Unit filename="Func_ValVal.cpp" />
+		<Unit filename="Func_ValVal.h" />
+		<Unit filename="Func_ValVar.cpp" />
+		<Unit filename="Func_ValVar.h" />
+		<Unit filename="Func_VarVal.cpp" />
+		<Unit filename="Func_VarVal.h" />
+		<Unit filename="Func_VarVar.cpp" />
+		<Unit filename="Func_VarVar.h" />
+		<Unit filename="Instrucciones.h" />
+		<Unit filename="Lista_Instrucciones.h" />
+		<Unit filename="Lista_string.h" />
+		<Unit filename="Salir.h" />
+		<Unit filename="StringDinamico.cpp" />
+		<Unit filename="StringDinamico.h" />
+		<Unit filename="Tipo_Funciones.h" />
+		<Unit filename="Tipo_Instrucciones.h" />
+		<Unit filename="Variables.cpp" />
+		<Unit filename="Variables.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
