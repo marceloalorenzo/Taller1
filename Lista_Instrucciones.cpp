@@ -9,7 +9,7 @@ void Crear_Lista (Lista &L)
 void InsFront (instruccion i, Lista &L)
 {
     Lista aux = new nodoL;
-    aux->info = h;
+    aux->info = i;
     aux->sig = L;
     L = aux;
 }
@@ -18,9 +18,9 @@ void InsFront (instruccion i, Lista &L)
 void InsBack (instruccion i, Lista &L)
 {
 if (L == NULL)
-    InsFront(h,L);
+    InsFront(i,L);
     else
-    InsBack (h, L->sig);
+    InsBack (i, L->sig);
 }
 
 //Saber si una lista està vacìa
