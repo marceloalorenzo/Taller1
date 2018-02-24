@@ -79,6 +79,7 @@ case ASIG_VAL:      {
 case ASIG_VAR:      {
                     printf("Asignación Variable:)
                     }
+                    break;
 case FUNC_VALVAL:   {
                     printf("VALOR VALOR");
                     }
