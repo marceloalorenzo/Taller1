@@ -51,6 +51,7 @@
 		<Unit filename="Func_VarVal.h" />
 		<Unit filename="Func_VarVar.cpp" />
 		<Unit filename="Func_VarVar.h" />
+		<Unit filename="Instrucciones.cpp" />
 		<Unit filename="Instrucciones.h" />
 		<Unit filename="Lista_Instrucciones.h" />
 		<Unit filename="Lista_string.h" />
