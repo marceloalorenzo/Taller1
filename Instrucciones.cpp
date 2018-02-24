@@ -1,10 +1,8 @@
 
 
 // Cargar la Instruccion
-void Cargar_instruccion (instruccion &i tipo_instruccion disc);
-
+void Cargar_instruccion (instruccion &i, tipo_instruccion disc);
 {
-
     //evaluo
     switch(disc)
 

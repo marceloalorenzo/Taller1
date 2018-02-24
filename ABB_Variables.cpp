@@ -33,7 +33,7 @@ void cargar_ABBvariable (Arbol &a, variable v)
 }
 
 //saber si esta vácio
-boolean esvacio (Arbol a)
+boolean ABB_vacio (Arbol a)
 {
     boolean es=FALSE;
     if(a == NULL)

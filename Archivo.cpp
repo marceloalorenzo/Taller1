@@ -1,22 +1,15 @@
 #include "Archivo.h"
 
+/* ********************************************** GENERALES ************************************************ */
 
-// Agrega el nuevo entero al final del archivo
-void Agregar (strings nomArch, int entero)
-{
-    FILE *f;
-    f=fopen(nomArch,"ab");
-    fwrite(&entero,sizeof(int),1,f);
-    fclose(f);
-}
 // Determina si existe o no un archivo con el nombre recibido por parámetro
 boolean Existe(strings nomArch)
 {
-    boolean es=TRUE;
+    boolean es = TRUE;
     FILE *f;
     f=fopen(nomArch,"rb");
     if(f==NULL)
-        es=FALSE;
+        es = FALSE;
     else
         fclose(f);
 
@@ -24,76 +17,43 @@ boolean Existe(strings nomArch)
 }
 
 // Determina si el archivo está vacío o no.
-// Precondición: El archivo existe
-boolean Vacio (strings nomArch)
+boolean Vacio (strings nomArch) /* Precondición: El archivo existe */
 {
-    boolean res=FALSE;
-    FILE *f=fopen(nomArch,"rb");
+    boolean res = FALSE;
+    FILE *f = fopen(nomArch,"rb");
     fseek(f,0,SEEK_END);
-    if(ftell(f)==0)
-        res=TRUE;
+    if(ftell(f) == 0)
+        res = TRUE;
     fclose(f);
     return res;
 }
-// Determina si el entero recibido está en el archivo.
-// Precondición: El archivo existe
-boolean Pertenece (strings nomArch, int entero)
-{
-    boolean encontre=FALSE;
-    int num;
-    FILE *f=fopen(nomArch,"rb");
-    fread(&num,sizeof(int),1,f);
 
-    while(encontre!=TRUE && !feof(f))
-    {
-        if(num==entero)
-            encontre=TRUE;
-        else
-            fread(&num,sizeof(int),1,f);
-    }
-    fclose(f);
-    return encontre;
-}
 // Devuelve la cantidad de enteros almacenados en el archivo.
-// Precondición: El archivo existe
-int Largo (strings nomArch)
+int Largo (strings nomArch) /* Precondición: El archivo existe */
 {
     int largoArch;
-    FILE *f=fopen(nomArch,"rb");
+    FILE *f = fopen(nomArch,"rb");
     fseek(f,0,SEEK_END);
-    largoArch=ftell(f)/sizeof(int);
+    largoArch = ftell(f)/sizeof(int);
     fclose(f);
     return largoArch;
-}
-// Devuelve el k-ésimo entero almacenado en el archivo.
-// Precondición: El archivo existe y su largo es ≥ k.
-int K_esimo (strings nomArch, int k)
-{
-    int buffer;
-    FILE *f=fopen(nomArch,"rb");
-    fseek(f,(k-1)*sizeof(int),SEEK_SET);
-    fread(&buffer,sizeof(int),1,f);
-    fclose(f);
-    return buffer;
 }
 
 //STRINGS
 // Escribe en el archivo los caracteres del string s (incluido '\0')
-// Precondición: El archivo viene abierto para escritura.
-void Bajar_strings (strings s, FILE * f) /* Módulo String */
+void Bajar_strings (strings s, FILE * f) /* Precondición: El archivo viene abierto para escritura*/
 {
-     int i=0;
+     int i = 0;
      while (s[i] != '\0')
      {
          fwrite (&s[i], sizeof(char), 1, f);
          i++;
      }
-     // escribo el '\0'
      fwrite (&s[i], sizeof(char), 1, f);
 }
+
 // Lee desde el archivo los caracteres del string s.
-// Precondición: El archivo viene abierto para lectura.
-void Levantar_strings (strings &s, FILE * f) /* Módulo String */
+void Levantar_strings (strings &s, FILE * f) /* Precondición: El archivo viene abierto para lectura.*/
 {
      int i=0;
      strings aux;
@@ -107,122 +67,252 @@ void Levantar_strings (strings &s, FILE * f) /* Módulo String */
      strcop (s, aux);
      delete [] aux;
 }
-//SOCIO
-// Escribe en el archivo los datos del socio s.
-// Precondición: El archivo viene abierto para escritura.
-void Bajar_socio (socio s, FILE * f) /* Módulo Socio */
+
+/* ********************************************** END GENERALES ************************************************ */
+
+/* ********************************************** .VARS ************************************************ */
+//VARIABLE
+// Escribe en el archivo los datos de la variable.
+void Bajar_variable (variable v, FILE * f) /* Precondición: El archivo viene abierto para escritura. */
 {
-     fwrite (&s.ced_magic, sizeof(long int), 1, f);
-     Bajar_strings (s.nombre, f);
-     Bajar_strings (s.origen, f);
-     fwrite (&s.cat_magica, sizeof(catmagica), 1, f);
-     fwrite (&s.fecha_nac, sizeof(fecha), 1, f);
+    Bajar_strings (v.var, f);
+    fwrite (&v.valor, sizeof(int), 1, f);
 }
 
-// Lee desde el archivo los datos de la socio s.
-// Precondición: El archivo viene abierto para lectura.
-void Levantar_socio (socio &s, FILE * f) /* Módulo Socio */
+// Lee desde el archivo los datos de la variable.
+void Levantar_variable (variable &v, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
 {
-     strcrear(s.nombre);
-     strcrear(s.origen);
-     fread (&s.ced_magic, sizeof(long int), 1, f);
-     Levantar_strings (s.nombre, f);
-     Levantar_strings (s.origen, f);
-     fread (&s.cat_magica, sizeof(catmagica), 1, f);
-     fread(&s.fecha_nac,sizeof(fecha),1,f);
+    Levantar_strings (v.var, f);
+    fread (&v.valor, sizeof(int), 1, f);
 }
 
-//HABILIDAD
-//Escribe en el archivo los datos de habilidad h
-//Precondición: El archivo viene abierto para escritura
-void Bajar_habilidad (habilidades h, FILE * f) /* Módulo habilidad */
-{
-    Bajar_strings(h.habilidad, f);
-    fwrite (&h.fecha_manif, sizeof(fecha), 1, f);
-    fwrite (&h.Ced_magica, sizeof(long int), 1, f);
-    fwrite (&h.tipo, sizeof(tipo_habilidad), 1, f);
-}
-// Lee desde el archivo los datos de la habilitad h.
-// Precondición: El archivo viene abierto para lectura.
-void Levantar_habilidad (habilidades &h, FILE * f) /* Módulo habilidad */
-{
-    strcrear(h.habilidad);
-    Levantar_strings(h.habilidad, f);
-    fread (&h.fecha_manif, sizeof(fecha), 1, f);
-    fread (&h.Ced_magica, sizeof(long int), 1, f);
-    fread (&h.tipo, sizeof(tipo_habilidad), 1, f);
-}
-//ABB Socios
-// Escribe en el archivo los datos de todas los socios del árbol
-// en forma recursiva.
-// PRECONDICION: El archivo viene abierto para escritura.
-void Bajar_ABB_Aux (Arbol a, FILE * f)
+// Auxiliar ABB Variables
+// Escribe en el archivo los datos de todas las variables del árbol en forma recursiva.
+void Bajar_ABB_Aux (Arbol a, FILE * f) /* PRECONDICION: El archivo viene abierto para escritura. */
 {
      if (a != NULL)
      {
-         //fwrite (&(a -> info), sizeof (int), 1, f);
-         //Se llama a la función que guarda un socio a archivo y usar como parametro
-        //a a->info
-         Bajar_socio(a->info,f);
-         Bajar_ABB_Aux (a -> hizq, f);
-         Bajar_ABB_Aux (a -> hder, f);
+         Bajar_variable(a->info,f);
+         Bajar_ABB_Aux (a->hizq, f);
+         Bajar_ABB_Aux (a->hder, f);
      }
 }
-// Abre el archivo para escritura y escribe los datos de todas los socios
-// del árbol (llamando al procedimiento anterior)
-//Bajar Arbol de busqueda binario
+
+// Abre el archivo para escritura y escribe los datos de todas las variables del árbol (llamando al procedimiento anterior)
+// ABB Variables
 void Bajar_ABB (Arbol a, strings NomArch)
 {
  FILE * f = fopen (NomArch, "wb");
  Bajar_ABB_Aux (a, f);
  fclose (f);
 }
-// Abre el archivo para lectura e inserta en el árbol todos los socios que están en el archivo (llamando al procedimiento ArbolABB).
-// PRECONDICION: El archivo existe.
+
+// Abre el archivo para lectura e inserta en el árbol todas las variables que están en el archivo (llamando al procedimiento ArbolABB).
 //Levantar Arbol de busqueda binario
-void Levantar_ABB (Arbol &a, strings NomArch)
+void Levantar_ABB (Arbol &a, strings NomArch) /* PRECONDICION: El archivo existe. */
 {
      FILE * f = fopen (NomArch, "rb");
-     socio buffer;
-     Levantar_socio(buffer, f);
+     variable buffer;
+     Levantar_variable(buffer, f);
      while (!feof(f))
      {
-         cargar_socios (a, buffer);
-         Levantar_socio(buffer, f);
+         cargar_ABBvariable(a, buffer);
+         Levantar_variable(buffer, f);
      }
      fclose (f);
 }
+
+/* ********************************************** END .VARS ************************************************ */
+
+/* ********************************************** .INST ************************************************ */
+
+//INSTRUCCION
+//Escribe en el archivo los datos de instruccion
+void Bajar_instruccion (instruccion i, FILE * f) /* Precondición: El archivo viene abierto para escritura */
+{
+    fwrite (i.discriminante, sizeof(tipo_instruccion), 1, f);
+    switch (i.discriminante)
+    {
+        case 'LEER':
+            {
+                Bajar_strings(i.variable1,f);
+            }
+            break;
+        case 'MOSTRAR':
+            {
+                Bajar_strings(i.variable2,f);
+            }
+            break;
+        case 'ASIG_VAL':
+            {
+                Bajar_strings(i.asig1.var_asig,f);
+                fwrite(i.asig1.val_asig, sizeof(int), 1, f);
+            }
+            break;
+        case 'ASIG_VAR':
+            {
+                Bajar_strings(i.asig2.var1,f);
+                Bajar_strings(i.asig2.var2,f);
+            }
+            break;
+        case 'FUNC_VALVAL':
+            {
+                Bajar_strings(i.asig3.var_asig,f);
+                fwrite(i.asig3.funcion, sizeof(tipo_funcion), 1, f);
+                fwrite(i.asig3.param1, sizeof(int), 1, f);
+                fwrite(i.asig3.param2, sizeof(int), 1, f);
+            }
+            break;
+        case 'FUNC_VARVAR':
+            {
+                Bajar_strings(i.asig4.variable,f);
+                fwrite(i.asig4.funcion, sizeof(tipo_funcion), 1, f);
+                Bajar_strings(i.asig4.param1,f);
+                Bajar_strings(i.asig4.param2,f);
+            }
+            break;
+        case 'FUNC_VARVAL':
+            {
+                Bajar_strings(i.asig5.var_asig,f);
+                fwrite(i.asig5.funcion, sizeof(tipo_funcion), 1, f);
+                Bajar_strings(i.asig5.param1,f);
+                fwrite(i.asig5.param2, sizeof(int), 1, f);
+            }
+            break;
+        case 'FUNC_VALVAR':
+            {
+                Bajar_strings(i.asig6.var_asig,f);
+                fwrite(i.asig6.funcion, sizeof(tipo_funcion), 1, f);
+                fwrite(i.asig6.param1, sizeof(int), 1, f);
+                Bajar_strings(i.asig6.param2,f);
+            }
+            break;
+    }
+}
+// Lee desde el archivo los datos de la habilitad h.
+void Levantar_instruccion (instruccion &i, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
+{
+    fread(&i.discriminante, sizeof(tipo_instruccion), 1, f);
+    switch (i.discriminante)
+    {
+        case 'LEER':
+            {
+                Levantar_strings(i.variable1,f);
+            }
+            break;
+        case 'MOSTRAR':
+            {
+                Levantar_strings(i.variable2,f);
+            }
+            break;
+        case 'ASIG_VAL':
+            {
+                Levantar_strings(i.asig1.var_asig,f);
+                fread(i.asig1.val_asig, sizeof(int), 1, f);
+            }
+            break;
+        case 'ASIG_VAR':
+            {
+                Levantar_strings(i.asig2.var1,f);
+                Levantar_strings(i.asig2.var2,f);
+            }
+            break;
+        case 'FUNC_VALVAL':
+            {
+                Levantar_strings(i.asig3.var_asig,f);
+                fread(i.asig3.funcion, sizeof(tipo_funcion), 1, f);
+                fread(i.asig3.param1, sizeof(int), 1, f);
+                fread(i.asig3.param2, sizeof(int), 1, f);
+            }
+            break;
+        case 'FUNC_VARVAR':
+            {
+                Levantar_strings(i.asig4.variable,f);
+                fread(i.asig4.funcion, sizeof(tipo_funcion), 1, f);
+                Levantar_strings(i.asig4.param1,f);
+                Levantar_strings(i.asig4.param2,f);
+            }
+            break;
+        case 'FUNC_VARVAL':
+            {
+                Levantar_strings(i.asig5.var_asig,f);
+                fread(i.asig5.funcion, sizeof(tipo_funcion), 1, f);
+                Levantar_strings(i.asig5.param1,f);
+                fread(i.asig5.param2, sizeof(int), 1, f);
+            }
+            break;
+        case 'FUNC_VALVAR':
+            {
+                Levantar_strings(i.asig6.var_asig,f);
+                fread(i.asig6.funcion, sizeof(tipo_funcion), 1, f);
+                fread(i.asig6.param1, sizeof(int), 1, f);
+                Levantar_strings(i.asig6.param2,f);
+            }
+            break;
+    }
+}
+
 //LISTA
-// Abre el archivo para escritura y escribe los datos de todos los socios
-// que están almacenadas en la lista
-//Bajar lista
-void Bajar_Lista (Lista L , strings NomArch) // Módulo Lista
+// Abre el archivo para escritura y escribe los datos de todas las instrucciones que están almacenadas en la lista
+// Bajar lista
+void Bajar_Lista (Lista L , strings NomArch)
 {
      FILE * f = fopen (NomArch, "wb");
      while (L != NULL)
      {
-         Bajar_habilidad(L->info, f);
+         Bajar_instruccion(L->info, f);
          L = L->sig;
      }
      fclose (f);
 }
 
-//Levantar lista
-void Levantar_Lista (Lista &L, strings NomArch) // Módulo Lista
+// Levantar lista
+void Levantar_Lista (Lista &L, strings NomArch) /* Precondición: El archivo existe */
 {
      FILE * f = fopen (NomArch, "rb");
-     habilidades buffer ;
-     Levantar_habilidad(buffer, f);
+     instruccion buffer;
+     Levantar_instruccion(buffer, f);
      while (!feof(f))
      {
-         InsBack (buffer, L);
-         Levantar_habilidad (buffer, f);
+         InsBack(buffer, L);
+         Levantar_instruccion(buffer, f);
      }
      fclose (f);
 }
 
+/* ********************************************** END .INST ************************************************ */
 
 
+/* ********************************************** .CSIM ************************************************ */
 
+//Levanta el archivo linea por linea
+void Levantar_strings_archivo (strings &s, FILE * f) /* Precondición: El archivo existe */
+{
+     int i=0;
+     strings aux;
+     aux = new char[MAX];
+     fread (&aux[i], sizeof(char), 1, f);
+     while (!feof(f) && (aux[i] != '\n'))
+     {
+         i++;
+         fread (&aux[i], sizeof(char), 1, f);
+     }
+     strcop (s, aux);
+     delete [] aux;
+}
 
+//Genera la lista con las lineas del archivo
+void Generar_Lista_String (Lista_strings &L, strings NomArch)
+{
+    FILE *f = fopen(nomArch".csim","rb");
+    strings buffer ;
+    Levantar_strings_archivo(buffer, f);
+    while (!feof(f))
+    {
+         InsBack2(buffer, L);
+         Levantar_strings_archivo(buffer, f);
+    }
+    fclose (f);
+}
 
+/* ********************************************** END .CSIM ************************************************ */

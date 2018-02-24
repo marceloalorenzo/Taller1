@@ -17,7 +17,7 @@ void InsFront (instruccion i, Lista &L);
 void InsBack (instruccion i, Lista &L);
 
 //Saber si una lista està vacìa
-boolean Esta_Vecia (Lista L);
+boolean Esta_Vacia_Lista (Lista L);
 
 //obtener el primer elemento de una lista
 instruccion Primero (Lista L);

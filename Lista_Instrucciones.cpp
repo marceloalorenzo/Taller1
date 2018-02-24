@@ -24,7 +24,7 @@ if (L == NULL)
 }
 
 //Saber si una lista està vacìa
-boolean Esta_Vecia (Lista L)
+boolean Esta_Vacia_Lista (Lista L)
 {
     return boolean (L == NULL);
 }

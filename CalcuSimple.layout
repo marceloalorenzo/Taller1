@@ -1,60 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-<<<<<<< HEAD
-	<File name="Func_ValVal.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ABB_Variables.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="664" topLine="5" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="9" />
-			<Collapse line="15" />
-			<Collapse line="21" />
-		</Folding>
-	</File>
-	<File name="Func_VarVal.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="14" />
+			<Cursor1 position="1929" topLine="78" />
 		</Cursor>
 	</File>
-	<File name="Instrucciones.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Instrucciones.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1093" topLine="32" />
-		</Cursor>
-		<Folding>
-			<Collapse line="57" />
-		</Folding>
-	</File>
-	<File name="Variables.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-=======
-	<File name="Instrucciones.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
->>>>>>> 953a14c2cb6ef56362830fe995921384d4c6fad9
-		<Cursor>
-			<Cursor1 position="664" topLine="17" />
+			<Cursor1 position="92" topLine="0" />
 		</Cursor>
 	</File>
-<<<<<<< HEAD
-	<File name="Func_ValVar.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Archivo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="3625" topLine="9" />
 		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="9" />
-			<Collapse line="15" />
-			<Collapse line="21" />
-		</Folding>
-=======
-	<File name="Variables.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
->>>>>>> 953a14c2cb6ef56362830fe995921384d4c6fad9
 	</File>
-	<File name="Func_VarVar.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Lista_Instrucciones.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="15" />
+			<Cursor1 position="453" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="ABB_Variables.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="504" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="Lista_Instrucciones.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="511" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="Lista_string.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="541" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Lista_string.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="35" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
