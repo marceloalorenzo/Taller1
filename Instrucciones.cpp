@@ -1,7 +1,7 @@
 
 
 // Cargar la Instruccion
-void Cargar_instruccion (instruccion &i);
+void Cargar_instruccion (instruccion &i tipo_instruccion disc);
 
 {
     /*
@@ -14,16 +14,9 @@ void Cargar_instruccion (instruccion &i);
     SI ES MOSTRAR
     SI ES ALGUN TIPO DE ASIGNACION
 
-    caso LEER: strcop(i.variable1,str);
-    caso MOSTRAR: strcop(i.variable2,str);
-    caso ASIG_VAL: carga_val_asig1(i.asig1,nom,val);
-    caso ASIG_VAR: carga_var_asig1(i.asig1,nom,val);
 */
-
-    //recibo el enumerado, que es el discriminante
-    scan(tipo_instruccion);
     //evaluo
-    switch(tipo_instruccion)
+    switch(disc)
 
     case LEER:          {
                         strcop(i.variable1,str);//str
@@ -42,15 +35,19 @@ void Cargar_instruccion (instruccion &i);
                         }
                         break;
     case FUNC_VALVAL:   {
+                        cargar_func_asig3()
                         }
                         break;
     case FUNC_VARVAR:   {
+                        cargar_func_asig4()
                         }
                         break;
     case FUNC_VARVAL:   {
+                        cargar_func_asig5()
                         }
                         break;
     case FUNC_VALVAR:   {
+                        cargar_func_asig6()
                         }
                         break;
 }
@@ -59,40 +56,5 @@ void Cargar_instruccion (instruccion &i);
 tipo_instruccion dar_tipo_inst (instruccion i);
 
 {
-//escaneo el tipo de intrucción
-scan(tipo_instruccion);
-//evaluo si es:
-switch(tipo_instruccion)
-
-case LEER:          {
-                    printf("Leer")
-                    }
-                    break;
-case MOSTRAR:       {
-                    printf("Mostrar")
-                    }
-                    break;
-case ASIG_VAL:      {
-                    printf("Asignación valor")
-                    }
-                    break;
-case ASIG_VAR:      {
-                    printf("Asignación Variable:)
-                    }
-                    break;
-case FUNC_VALVAL:   {
-                    printf("VALOR VALOR");
-                    }
-                    break;
-case FUNC_VARVAR:   {
-                    printf("VARIABLE VARIABLE");
-                    }
-                    break;
-case FUNC_VARVAL:   {
-                    printf ("VARIABLE VALOR");
-                    }
-                    break;
-case FUNC_VALVAR:   {
-                    printf ("VALOR VARIABLE");
-                    }
-                    break;
+    return i.discriminante;
+}

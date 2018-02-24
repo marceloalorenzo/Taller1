@@ -53,6 +53,7 @@
 		<Unit filename="Func_VarVar.h" />
 		<Unit filename="Instrucciones.cpp" />
 		<Unit filename="Instrucciones.h" />
+		<Unit filename="Lista_Instrucciones.cpp" />
 		<Unit filename="Lista_Instrucciones.h" />
 		<Unit filename="Lista_string.h" />
 		<Unit filename="Salir.h" />
