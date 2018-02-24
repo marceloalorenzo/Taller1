@@ -35,19 +35,19 @@ void Cargar_instruccion (instruccion &i tipo_instruccion disc);
                         }
                         break;
     case FUNC_VALVAL:   {
-                        cargar_func_asig3()
+                        cargar_func_asig3(i.asig3,str,tp,p1,p2)
                         }
                         break;
     case FUNC_VARVAR:   {
-                        cargar_func_asig4()
+                        cargar_func_asig4(i.asig4,str,tp,p1,p2)
                         }
                         break;
     case FUNC_VARVAL:   {
-                        cargar_func_asig5()
+                        cargar_func_asig5(i.asig5,str,tp,p1,p2)
                         }
                         break;
     case FUNC_VALVAR:   {
-                        cargar_func_asig6()
+                        cargar_func_asig6(i.asig6,str,tp,p1,p2)
                         }
                         break;
 }
