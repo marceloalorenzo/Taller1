@@ -92,6 +92,6 @@ case FUNC_VARVAL:   {
                     }
                     break;
 case FUNC_VALVAR:   {
-                    prinft ("VALOR VARIABLE");
+                    printf ("VALOR VARIABLE");
                     }
                     break;
