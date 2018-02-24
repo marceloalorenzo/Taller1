@@ -7,6 +7,7 @@ void Cargar_instruccion (instruccion &i);
     fflush (stdin);
     strcrear(i.instruccion);
     scan(i.instruccion)
+
     LLEGA EL ENUM QUE ES EL DISCRIMINANTE, LEER MOSTRAR SALIR
     SI ES LEER CARGO EL STRING, SI ES MOSTRAR TAMBIEN(VAR2)
     Y LLEGA LA FUNCION, VARIABLE, ASIGNACIÓN ETC...
