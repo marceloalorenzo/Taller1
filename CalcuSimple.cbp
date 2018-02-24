@@ -32,7 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ABB_Variables.cpp" />
 		<Unit filename="ABB_Variables.h" />
+		<Unit filename="Archivo.cpp" />
 		<Unit filename="Archivo.h" />
 		<Unit filename="Asig_Val.cpp" />
 		<Unit filename="Asig_Val.h" />
@@ -55,6 +57,7 @@
 		<Unit filename="Instrucciones.h" />
 		<Unit filename="Lista_Instrucciones.cpp" />
 		<Unit filename="Lista_Instrucciones.h" />
+		<Unit filename="Lista_string.cpp" />
 		<Unit filename="Lista_string.h" />
 		<Unit filename="Salir.h" />
 		<Unit filename="StringDinamico.cpp" />
