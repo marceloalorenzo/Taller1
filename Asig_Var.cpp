@@ -1,3 +1,4 @@
+#include "Asig_Var.h"
 
 // Devolver el nombre de la variable 1 guardada
 void dar_var1_asig2 (asig_var var, strings &str)

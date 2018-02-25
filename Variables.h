@@ -7,7 +7,7 @@ typedef struct {strings var;
                 } variable;
 
 // Devolver el nombre de la variable guardada
-void dar_variable (variable var, strings &str);
+void dar_variable (strings &str, variable var);
 
 // Devolver el valor de la variable guardada
 int dar_valor_var (variable var);

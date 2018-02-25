@@ -64,6 +64,7 @@ void Levantar_strings (strings &s, FILE * f) /* Precondición: El archivo viene 
          i++;
          fread (&aux[i], sizeof(char), 1, f);
      }
+     aux[i] = '\0';
      strcop (s, aux);
      delete [] aux;
 }
@@ -82,8 +83,8 @@ void Bajar_variable (variable v, FILE * f) /* Precondición: El archivo viene ab
 // Lee desde el archivo los datos de la variable.
 void Levantar_variable (variable &v, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
 {
-    Levantar_strings (v.var, f);
-    fread (&v.valor, sizeof(int), 1, f);
+    Levantar_strings(v.var,f);
+    fread(&v.valor, sizeof(int),1,f);
 }
 
 // Auxiliar ABB Variables
@@ -130,61 +131,61 @@ void Levantar_ABB (Arbol &a, strings NomArch) /* PRECONDICION: El archivo existe
 //Escribe en el archivo los datos de instruccion
 void Bajar_instruccion (instruccion i, FILE * f) /* Precondición: El archivo viene abierto para escritura */
 {
-    fwrite (i.discriminante, sizeof(tipo_instruccion), 1, f);
+    fwrite(&i.discriminante, sizeof(tipo_instruccion), 1, f);
     switch (i.discriminante)
     {
         case 'LEER':
             {
-                Bajar_strings(i.variable1,f);
+                Bajar_strings(i.dato_disc.variable1,f);
             }
             break;
         case 'MOSTRAR':
             {
-                Bajar_strings(i.variable2,f);
+                Bajar_strings(i.dato_disc.variable2,f);
             }
             break;
         case 'ASIG_VAL':
             {
-                Bajar_strings(i.asig1.var_asig,f);
-                fwrite(i.asig1.val_asig, sizeof(int), 1, f);
+                Bajar_strings(i.dato_disc.asig1.var_asig,f);
+                fwrite(&i.dato_disc.asig1.val_asig, sizeof(int), 1, f);
             }
             break;
         case 'ASIG_VAR':
             {
-                Bajar_strings(i.asig2.var1,f);
-                Bajar_strings(i.asig2.var2,f);
+                Bajar_strings(i.dato_disc.asig2.var1,f);
+                Bajar_strings(i.dato_disc.asig2.var2,f);
             }
             break;
         case 'FUNC_VALVAL':
             {
-                Bajar_strings(i.asig3.var_asig,f);
-                fwrite(i.asig3.funcion, sizeof(tipo_funcion), 1, f);
-                fwrite(i.asig3.param1, sizeof(int), 1, f);
-                fwrite(i.asig3.param2, sizeof(int), 1, f);
+                Bajar_strings(i.dato_disc.asig3.var_asig,f);
+                fwrite(&i.dato_disc.asig3.funcion, sizeof(tipo_funcion), 1, f);
+                fwrite(&i.dato_disc.asig3.param1, sizeof(int), 1, f);
+                fwrite(&i.dato_disc.asig3.param2, sizeof(int), 1, f);
             }
             break;
         case 'FUNC_VARVAR':
             {
-                Bajar_strings(i.asig4.variable,f);
-                fwrite(i.asig4.funcion, sizeof(tipo_funcion), 1, f);
-                Bajar_strings(i.asig4.param1,f);
-                Bajar_strings(i.asig4.param2,f);
+                Bajar_strings(i.dato_disc.asig4.variable,f);
+                fwrite(&i.dato_disc.asig4.funcion, sizeof(tipo_funcion), 1, f);
+                Bajar_strings(i.dato_disc.asig4.param1,f);
+                Bajar_strings(i.dato_disc.asig4.param2,f);
             }
             break;
         case 'FUNC_VARVAL':
             {
-                Bajar_strings(i.asig5.var_asig,f);
-                fwrite(i.asig5.funcion, sizeof(tipo_funcion), 1, f);
-                Bajar_strings(i.asig5.param1,f);
-                fwrite(i.asig5.param2, sizeof(int), 1, f);
+                Bajar_strings(i.dato_disc.asig5.variable,f);
+                fwrite(&i.dato_disc.asig5.funcion, sizeof(tipo_funcion), 1, f);
+                Bajar_strings(i.dato_disc.asig5.param1,f);
+                fwrite(&i.dato_disc.asig5.param2, sizeof(int), 1, f);
             }
             break;
         case 'FUNC_VALVAR':
             {
-                Bajar_strings(i.asig6.var_asig,f);
-                fwrite(i.asig6.funcion, sizeof(tipo_funcion), 1, f);
-                fwrite(i.asig6.param1, sizeof(int), 1, f);
-                Bajar_strings(i.asig6.param2,f);
+                Bajar_strings(i.dato_disc.asig6.variable,f);
+                fwrite(&i.dato_disc.asig6.funcion, sizeof(tipo_funcion), 1, f);
+                fwrite(&i.dato_disc.asig6.param1, sizeof(int), 1, f);
+                Bajar_strings(i.dato_disc.asig6.param2,f);
             }
             break;
     }
@@ -197,56 +198,56 @@ void Levantar_instruccion (instruccion &i, FILE * f) /* Precondición: El archiv
     {
         case 'LEER':
             {
-                Levantar_strings(i.variable1,f);
+                Levantar_strings(i.dato_disc.variable1,f);
             }
             break;
         case 'MOSTRAR':
             {
-                Levantar_strings(i.variable2,f);
+                Levantar_strings(i.dato_disc.variable2,f);
             }
             break;
         case 'ASIG_VAL':
             {
-                Levantar_strings(i.asig1.var_asig,f);
-                fread(i.asig1.val_asig, sizeof(int), 1, f);
+                Levantar_strings(i.dato_disc.asig1.var_asig,f);
+                fread(&i.dato_disc.asig1.val_asig, sizeof(int), 1, f);
             }
             break;
         case 'ASIG_VAR':
             {
-                Levantar_strings(i.asig2.var1,f);
-                Levantar_strings(i.asig2.var2,f);
+                Levantar_strings(i.dato_disc.asig2.var1,f);
+                Levantar_strings(i.dato_disc.asig2.var2,f);
             }
             break;
         case 'FUNC_VALVAL':
             {
-                Levantar_strings(i.asig3.var_asig,f);
-                fread(i.asig3.funcion, sizeof(tipo_funcion), 1, f);
-                fread(i.asig3.param1, sizeof(int), 1, f);
-                fread(i.asig3.param2, sizeof(int), 1, f);
+                Levantar_strings(i.dato_disc.asig3.var_asig,f);
+                fread(&i.dato_disc.asig3.funcion, sizeof(tipo_funcion), 1, f);
+                fread(&i.dato_disc.asig3.param1, sizeof(int), 1, f);
+                fread(&i.dato_disc.asig3.param2, sizeof(int), 1, f);
             }
             break;
         case 'FUNC_VARVAR':
             {
-                Levantar_strings(i.asig4.variable,f);
-                fread(i.asig4.funcion, sizeof(tipo_funcion), 1, f);
-                Levantar_strings(i.asig4.param1,f);
-                Levantar_strings(i.asig4.param2,f);
+                Levantar_strings(i.dato_disc.asig4.variable,f);
+                fread(&i.dato_disc.asig4.funcion, sizeof(tipo_funcion), 1, f);
+                Levantar_strings(i.dato_disc.asig4.param1,f);
+                Levantar_strings(i.dato_disc.asig4.param2,f);
             }
             break;
         case 'FUNC_VARVAL':
             {
-                Levantar_strings(i.asig5.var_asig,f);
-                fread(i.asig5.funcion, sizeof(tipo_funcion), 1, f);
-                Levantar_strings(i.asig5.param1,f);
-                fread(i.asig5.param2, sizeof(int), 1, f);
+                Levantar_strings(i.dato_disc.asig5.variable,f);
+                fread(&i.dato_disc.asig5.funcion, sizeof(tipo_funcion), 1, f);
+                Levantar_strings(i.dato_disc.asig5.param1,f);
+                fread(&i.dato_disc.asig5.param2, sizeof(int), 1, f);
             }
             break;
         case 'FUNC_VALVAR':
             {
-                Levantar_strings(i.asig6.var_asig,f);
-                fread(i.asig6.funcion, sizeof(tipo_funcion), 1, f);
-                fread(i.asig6.param1, sizeof(int), 1, f);
-                Levantar_strings(i.asig6.param2,f);
+                Levantar_strings(i.dato_disc.asig6.variable,f);
+                fread(&i.dato_disc.asig6.funcion, sizeof(tipo_funcion), 1, f);
+                fread(&i.dato_disc.asig6.param1, sizeof(int), 1, f);
+                Levantar_strings(i.dato_disc.asig6.param2,f);
             }
             break;
     }
@@ -292,11 +293,12 @@ void Levantar_strings_archivo (strings &s, FILE * f) /* Precondición: El archiv
      strings aux;
      aux = new char[MAX];
      fread (&aux[i], sizeof(char), 1, f);
-     while (!feof(f) && (aux[i] != '\n'))
+     while (!feof(f) && aux[i] != '\n')
      {
          i++;
          fread (&aux[i], sizeof(char), 1, f);
      }
+     aux[i] = '\0';
      strcop (s, aux);
      delete [] aux;
 }
@@ -304,14 +306,16 @@ void Levantar_strings_archivo (strings &s, FILE * f) /* Precondición: El archiv
 //Genera la lista con las lineas del archivo
 void Generar_Lista_String (Lista_strings &L, strings NomArch)
 {
-    FILE *f = fopen(nomArch".csim","rb");
+    FILE *f = fopen(NomArch,"rb");
     strings buffer ;
-    Levantar_strings_archivo(buffer, f);
-    while (!feof(f))
+    //Levantar_strings_archivo(buffer,f);
+
+    do
     {
-         InsBack2(buffer, L);
-         Levantar_strings_archivo(buffer, f);
-    }
+        Levantar_strings_archivo(buffer, f);
+        InsBack2(buffer, L);
+
+    } while (!feof(f));
     fclose (f);
 }
 

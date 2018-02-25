@@ -1,6 +1,7 @@
+#include "Variables.h"
 
 // Devolver el nombre de la variable guardada
-void dar_variable (variable var, strings &str)
+void dar_variable (strings &str, variable var)
 {
     strcop(str,var.var);
 }
@@ -15,7 +16,7 @@ int dar_valor_var (variable var)
 void Cargar_variable (variable &var, strings nom, int val)
 {
     strcop(var.var,nom);
-    var.valor=val;
+    var.valor = val;
 }
 
 //Mostrar en pantalla

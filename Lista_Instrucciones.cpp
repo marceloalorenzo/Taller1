@@ -1,3 +1,4 @@
+#include "Lista_Instrucciones.h"
 
 //Crear lista vacìa
 void Crear_Lista (Lista &L)

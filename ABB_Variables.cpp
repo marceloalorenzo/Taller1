@@ -9,9 +9,6 @@ void crear(Arbol &a)
 //Cargar ABB
 void cargar_ABBvariable (Arbol &a, variable v)
 {
-    strings aux1, aux2;
-    strcrear(aux1);
-    strcrear(aux2);
     if(a == NULL)
     {
         a = new nodo;
@@ -21,15 +18,23 @@ void cargar_ABBvariable (Arbol &a, variable v)
     }
     else
     {
-        dar_variable(v,aux1);
-        dar_variable(a->info,aux1);
-        if(strmen(aux1,aux2)== TRUE)
+        strings aux1, aux2;
+        strcrear(aux1);
+        strcrear(aux2);
+        dar_variable(aux1,v);
+        dar_variable(aux2,a->info);
+        if(strmen(aux1,aux2) == TRUE)
+        {
             cargar_ABBvariable(a->hizq,v);
+        }
+
         else
+        {
             cargar_ABBvariable(a->hder,v);
+        }
+        strdestruir(aux1);
+        strdestruir(aux2);
     }
-    strdestruir(aux1);
-    strdestruir(aux2);
 }
 
 //saber si esta vácio
@@ -49,7 +54,7 @@ boolean existe_ABB (Arbol a, strings var)
     {
         strings aux;
         strcrear(aux);
-        dar_variable(a->info,aux);
+        dar_variable(aux,a->info);
         if(streq(aux,var) == TRUE)
         {
             es = TRUE;
@@ -76,7 +81,7 @@ int Mostrar_valor (Arbol a, strings var)
     {
         strings aux;
         strcrear(aux);
-        dar_variable(a->info,aux);
+        dar_variable(aux,a->info);
         if(streq(aux,var) == TRUE)
         {
             Mostrar_variable(a->info);
@@ -93,5 +98,16 @@ int Mostrar_valor (Arbol a, strings var)
             }
         }
         strdestruir(aux);
+    }
+}
+
+//Mostrar arbol por pantalla
+void Mostrar_arbol(Arbol a)
+{
+    if (a != NULL)
+    {
+        Mostrar_arbol(a->hizq);
+        Mostrar_variable(a->info);
+        Mostrar_arbol(a->hder);
     }
 }

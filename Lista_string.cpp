@@ -9,7 +9,7 @@ void Crear_Lista_strings (Lista_strings &L)
 //Agregar elemento al inicio
 void InsFront2 (strings str, Lista_strings &L)
 {
-    Lista_strings aux = new nodoL;
+    Lista_strings aux = new nodoLis;
     strcop(aux->info,str);
     aux->sig = L;
     L = aux;
@@ -19,9 +19,9 @@ void InsFront2 (strings str, Lista_strings &L)
 void InsBack2 (strings str, Lista_strings &L)
 {
     if (L == NULL)
-    InsFront2(str,L);
+        InsFront2(str,L);
     else
-    InsBack2(str, L->sig);
+        InsBack2(str, L->sig);
 }
 
 //Saber si una lista està vacìa
@@ -43,7 +43,7 @@ void Mostrar_Lista2 (Lista_strings L)
     {
         print(L->info);
         printf("\n");
-        Mostrar_Lista(L->sig);
+        Mostrar_Lista2(L->sig);
     }
 }
 

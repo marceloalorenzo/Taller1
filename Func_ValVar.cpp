@@ -1,3 +1,4 @@
+#include "Func_ValVar.h"
 
 // Devolver el nombre de la variable guardada
 void dar_var_asig6 (func_valvar func, strings &str)

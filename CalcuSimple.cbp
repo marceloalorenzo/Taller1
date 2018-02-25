@@ -62,7 +62,9 @@
 		<Unit filename="Salir.h" />
 		<Unit filename="StringDinamico.cpp" />
 		<Unit filename="StringDinamico.h" />
+		<Unit filename="Tipo_Funciones.cpp" />
 		<Unit filename="Tipo_Funciones.h" />
+		<Unit filename="Tipo_Instrucciones.cpp" />
 		<Unit filename="Tipo_Instrucciones.h" />
 		<Unit filename="Variables.cpp" />
 		<Unit filename="Variables.h" />

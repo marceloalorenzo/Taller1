@@ -23,4 +23,7 @@ boolean existe_ABB (Arbol a, strings var);
 //Mostrar valor de una variable
 int Mostrar_valor (Arbol a, strings var);
 
+//Mostrar arbol por pantalla
+void Mostrar_arbol(Arbol a);
+
 #endif // ABBSOCIOS_H_INCLUDED
