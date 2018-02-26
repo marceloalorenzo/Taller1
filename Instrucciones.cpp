@@ -1,10 +1,11 @@
 #include "Instrucciones.h"
-/*
+
 // Cargar la Instruccion
-void Cargar_instruccion (instruccion &i, tipo_instruccion disc)
+void Cargar_instruccion (instruccion &i )
 {
+    return i.discriminante;
     //evaluo
-    switch(disc)
+    /*switch(disc)
 
     case LEER:          {
                         strcop(i.dato_disc.variable1,str);
@@ -38,6 +39,7 @@ void Cargar_instruccion (instruccion &i, tipo_instruccion disc)
                         cargar_func_asig6(i.dato_disc.asig6,str,tp,p1,p2);
                         }
                         break;
+*/
 }
 
 //Devolver el tipo de instruccion (LEER, MOSTRAR, ASIG_VAL, ASIG_VAR, FUNC_VALVAL, FUNC_VARVAR, FUNC_VARVAL, FUNC_VALVAR)
@@ -46,4 +48,4 @@ tipo_instruccion dar_tipo_inst (instruccion i);
 {
     return i.discriminante;
 }
-*/
+
