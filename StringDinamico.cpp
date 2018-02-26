@@ -53,19 +53,17 @@ void scan(strings &s)
     strdestruir(aux);
 }
 
-void scan_palabra(strings &s)
+void scan_palabra(strings str,strings &s, int &i)
 {
     strings aux = new char[MAX];
-    int i=0;
-    char c;
-    scanf("%c",&c);
-    while (c != '\0' && c != '')
+    int j=0;
+    while (str[i] != '\0' && str[i] != ' ')
     {
-        aux[i]=c;
+        aux[j]=str[i];
         i++;
-        scanf("%c",&c);
+        j++;
     }
-    aux[i] = '\0';
+    aux[j] = '\0';
     strcop(s,aux);
     strdestruir(aux);
 }

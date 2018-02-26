@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1519525934 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
+	"ABB_Variables.h"
+
+1519518860 c:\users\usuario\documents\github\taller1\abb_variables.h
+	"Variables.h"
+
+1519522427 c:\users\usuario\documents\github\taller1\variables.h
+	"StringDinamico.h"
+
+1519684924 c:\users\usuario\documents\github\taller1\stringdinamico.h
+	"boolean.h"
+
+1519427234 c:\users\usuario\documents\github\taller1\boolean.h
+	<stdio.h>
+
+1519524824 source:c:\users\usuario\documents\github\taller1\archivo.cpp
+	"Archivo.h"
+
+1519505509 c:\users\usuario\documents\github\taller1\archivo.h
+	"ABB_Variables.h"
+	"Lista_Instrucciones.h"
+	"Lista_string.h"
+
+1519512001 c:\users\usuario\documents\github\taller1\lista_instrucciones.h
+	"Instrucciones.h"
+
+1519511944 c:\users\usuario\documents\github\taller1\instrucciones.h
+	"Tipo_Instrucciones.h"
+	"Asig_Val.h"
+	"Asig_Var.h"
+	"Func_ValVal.h"
+	"Func_ValVar.h"
+	"Func_VarVal.h"
+	"Func_VarVar.h"
+
+1519427234 c:\users\usuario\documents\github\taller1\tipo_instrucciones.h
+
+1519427234 c:\users\usuario\documents\github\taller1\asig_val.h
+	"StringDinamico.h"
+
+1519427234 c:\users\usuario\documents\github\taller1\asig_var.h
+	"StringDinamico.h"
+
+1519427234 c:\users\usuario\documents\github\taller1\func_valval.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1519427234 c:\users\usuario\documents\github\taller1\tipo_funciones.h
+
+1519427234 c:\users\usuario\documents\github\taller1\func_valvar.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1519427234 c:\users\usuario\documents\github\taller1\func_varval.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1519427234 c:\users\usuario\documents\github\taller1\func_varvar.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1519505632 c:\users\usuario\documents\github\taller1\lista_string.h
+	"StringDinamico.h"
+
+1519513232 source:c:\users\usuario\documents\github\taller1\asig_val.cpp
+	"Asig_Val.h"
+
+1519513429 source:c:\users\usuario\documents\github\taller1\asig_var.cpp
+	"Asig_Var.h"
+
+1519427234 source:c:\users\usuario\documents\github\taller1\boolean.cpp
+
+1519513377 source:c:\users\usuario\documents\github\taller1\func_valval.cpp
+	"Func_ValVal.h"
+
+1519513377 source:c:\users\usuario\documents\github\taller1\func_valvar.cpp
+	"Func_ValVar.h"
+
+1519513377 source:c:\users\usuario\documents\github\taller1\func_varval.cpp
+	"Func_VarVal.h"
+
+1519513377 source:c:\users\usuario\documents\github\taller1\func_varvar.cpp
+	"Func_VarVar.h"
+
+1519513641 source:c:\users\usuario\documents\github\taller1\instrucciones.cpp
+	"Instrucciones.h"
+
+1519513670 source:c:\users\usuario\documents\github\taller1\lista_instrucciones.cpp
+	"Lista_Instrucciones.h"
+

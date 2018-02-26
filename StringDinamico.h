@@ -21,7 +21,7 @@ void strcop(strings &s1,strings s2);
 void scan(strings &s);
 
 //Leer string hasta el espacio (solo una palabra)
-void scan_palabra(strings &s);
+void scan_palabra(strings str,strings &s, int &i);
 
 // Concatenar 2 strings
 void strcon(strings &s1,strings s2);
