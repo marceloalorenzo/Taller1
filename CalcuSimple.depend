@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1519525934 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
+1519698265 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
 	"ABB_Variables.h"
 
 1519518860 c:\users\usuario\documents\github\taller1\abb_variables.h
@@ -14,7 +14,7 @@
 1519427234 c:\users\usuario\documents\github\taller1\boolean.h
 	<stdio.h>
 
-1519524824 source:c:\users\usuario\documents\github\taller1\archivo.cpp
+1519698757 source:c:\users\usuario\documents\github\taller1\archivo.cpp
 	"Archivo.h"
 
 1519505509 c:\users\usuario\documents\github\taller1\archivo.h
@@ -25,7 +25,7 @@
 1519512001 c:\users\usuario\documents\github\taller1\lista_instrucciones.h
 	"Instrucciones.h"
 
-1519511944 c:\users\usuario\documents\github\taller1\instrucciones.h
+1519698348 c:\users\usuario\documents\github\taller1\instrucciones.h
 	"Tipo_Instrucciones.h"
 	"Asig_Val.h"
 	"Asig_Var.h"
@@ -83,9 +83,31 @@
 1519513377 source:c:\users\usuario\documents\github\taller1\func_varvar.cpp
 	"Func_VarVar.h"
 
-1519513641 source:c:\users\usuario\documents\github\taller1\instrucciones.cpp
+1519698714 source:c:\users\usuario\documents\github\taller1\instrucciones.cpp
 	"Instrucciones.h"
 
 1519513670 source:c:\users\usuario\documents\github\taller1\lista_instrucciones.cpp
 	"Lista_Instrucciones.h"
+
+1519517412 source:c:\users\usuario\documents\github\taller1\lista_string.cpp
+	"Lista_string.h"
+
+1519684924 source:c:\users\usuario\documents\github\taller1\stringdinamico.cpp
+	"StringDinamico.h"
+
+1519527014 source:c:\users\usuario\documents\github\taller1\tipo_funciones.cpp
+	"Tipo_Funciones.h"
+
+1519527060 source:c:\users\usuario\documents\github\taller1\tipo_instrucciones.cpp
+	"Tipo_Instrucciones.h"
+
+1519698703 source:c:\users\usuario\documents\github\taller1\main.cpp
+	<stdio.h>
+	"Archivo.h"
+	"ABB_Variables.h"
+	"Lista_Instrucciones.h"
+	"Lista_string.h"
+
+1519698703 source:c:\users\usuario\documents\github\taller1\variables.cpp
+	"Variables.h"
 

@@ -83,6 +83,7 @@ void Bajar_variable (variable v, FILE * f) /* Precondición: El archivo viene ab
 // Lee desde el archivo los datos de la variable.
 void Levantar_variable (variable &v, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
 {
+    strcrear(v.var);
     Levantar_strings(v.var,f);
     fread(&v.valor, sizeof(int),1,f);
 }

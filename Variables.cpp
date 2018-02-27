@@ -15,6 +15,7 @@ int dar_valor_var (variable var)
 // Cargar la variable
 void Cargar_variable (variable &var, strings nom, int val)
 {
+    strcrear(var.var);
     strcop(var.var,nom);
     var.valor = val;
 }
