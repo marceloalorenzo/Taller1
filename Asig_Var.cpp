@@ -15,6 +15,8 @@ void dar_var2_asig2 (asig_var var, strings &str)
 // Cargar la Asignacion 2
 void carga_var1_asig2 (asig_var &var, strings nom1, strings nom2)
 {
+    strcrear(var.var1);
     strcop(var.var1,nom1);
+    strcrear(var.var2);
     strcop(var.var2,nom2);
 }

@@ -27,9 +27,12 @@ void dar_param2_asig4 (func_varvar func, strings &str)
 // Cargar la Asignaciòn 4
 void cargar_func_asig4 (func_varvar &func, strings nom, tipo_funcion tp, strings p1, strings p2)
 {
+    strcrear(func.variable);
     strcop(func.variable,nom);
     func.funcion = tp;
+    strcrear(func.param1);
     strcop(func.param1,p1);
+    strcrear(func.param2);
     strcop(func.param2,p2);
 }
 

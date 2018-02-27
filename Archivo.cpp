@@ -199,28 +199,34 @@ void Levantar_instruccion (instruccion &i, FILE * f) /* Precondición: El archiv
     {
         case 'LEER':
             {
+                strcrear(i.dato_disc.variable1);
                 Levantar_strings(i.dato_disc.variable1,f);
             }
             break;
         case 'MOSTRAR':
             {
+                strcrear(i.dato_disc.variable2);
                 Levantar_strings(i.dato_disc.variable2,f);
             }
             break;
         case 'ASIG_VAL':
             {
+                strcrear(i.dato_disc.asig1.var_asig);
                 Levantar_strings(i.dato_disc.asig1.var_asig,f);
                 fread(&i.dato_disc.asig1.val_asig, sizeof(int), 1, f);
             }
             break;
         case 'ASIG_VAR':
             {
+                strcrear(i.dato_disc.asig2.var1);
                 Levantar_strings(i.dato_disc.asig2.var1,f);
+                strcrear(i.dato_disc.asig2.var2);
                 Levantar_strings(i.dato_disc.asig2.var2,f);
             }
             break;
         case 'FUNC_VALVAL':
             {
+                strcrear(i.dato_disc.asig3.var_asig);
                 Levantar_strings(i.dato_disc.asig3.var_asig,f);
                 fread(&i.dato_disc.asig3.funcion, sizeof(tipo_funcion), 1, f);
                 fread(&i.dato_disc.asig3.param1, sizeof(int), 1, f);
@@ -229,25 +235,32 @@ void Levantar_instruccion (instruccion &i, FILE * f) /* Precondición: El archiv
             break;
         case 'FUNC_VARVAR':
             {
+                strcrear(i.dato_disc.asig4.variable);
                 Levantar_strings(i.dato_disc.asig4.variable,f);
                 fread(&i.dato_disc.asig4.funcion, sizeof(tipo_funcion), 1, f);
+                strcrear(i.dato_disc.asig4.param1);
                 Levantar_strings(i.dato_disc.asig4.param1,f);
+                strcrear(i.dato_disc.asig4.param2);
                 Levantar_strings(i.dato_disc.asig4.param2,f);
             }
             break;
         case 'FUNC_VARVAL':
             {
+                strcrear(i.dato_disc.asig5.variable);
                 Levantar_strings(i.dato_disc.asig5.variable,f);
                 fread(&i.dato_disc.asig5.funcion, sizeof(tipo_funcion), 1, f);
+                strcrear(i.dato_disc.asig5.param1);
                 Levantar_strings(i.dato_disc.asig5.param1,f);
                 fread(&i.dato_disc.asig5.param2, sizeof(int), 1, f);
             }
             break;
         case 'FUNC_VALVAR':
             {
+                strcrear(i.dato_disc.asig6.variable);
                 Levantar_strings(i.dato_disc.asig6.variable,f);
                 fread(&i.dato_disc.asig6.funcion, sizeof(tipo_funcion), 1, f);
                 fread(&i.dato_disc.asig6.param1, sizeof(int), 1, f);
+                strcrear(i.dato_disc.asig6.param2);
                 Levantar_strings(i.dato_disc.asig6.param2,f);
             }
             break;

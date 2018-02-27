@@ -30,8 +30,6 @@ boolean Esta_Vacia_Lista (Lista L)
     return boolean (L == NULL);
 }
 
-
-
 //obtener el primer elemento de una lista
 instruccion Primero (Lista L)
 {

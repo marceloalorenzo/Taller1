@@ -15,6 +15,7 @@ int dar_val_asig1 (asig_val var)
 // Aargar la asignacion 1
 void carga_var_asig1 (asig_val &var, strings nom, int val)
 {
+    strcrear(var.var_asig);
     strcop(var.var_asig,nom);
     var.val_asig = val;
 }
