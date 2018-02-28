@@ -12,16 +12,6 @@ int main ()
     strings prueba; //le doy nombre al string
     strcrear(prueba); //creo string llamado prueba
 
-    {}
-
-    //while ( strings != '\0'){
-
-
-
-      //                      }
-
-//    crear(a);//Creo Arbol
-//    Arbol a;//a se llama Arbol
 
 
 
