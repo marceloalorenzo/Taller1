@@ -88,7 +88,8 @@ void Compilar (strings str)
                                                     }
                                                     else
                                                     {
-                                                        printf("\n\nLa variable no fue declarada.")
+                                                        printf("\n\nLa variable no fue declarada.");
+                                                        declarada = FALSE;
                                                     }
                                                 }
                                                 else
@@ -112,7 +113,8 @@ void Compilar (strings str)
                                                         }
                                                         else
                                                         {
-                                                            printf("\n\nLa variable no fue declarada.")
+                                                            printf("\n\nLa variable no fue declarada.");
+                                                            declarada = FALSE;
                                                         }
                                                     }
                                                     else
