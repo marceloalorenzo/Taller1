@@ -68,3 +68,11 @@ void Parseo (strings str,Lista_strings &parseo)
     }
     strdestruir(aux);
 }
+
+int Largo_Lista (Lista_strings lis)
+{
+    if (lis == NULL)
+        return 0;
+    else
+        return 1 + Largo_Lista(lis->sig);
+}

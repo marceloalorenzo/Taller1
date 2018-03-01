@@ -28,4 +28,6 @@ void Mostrar_Lista2 (Lista_strings L);
 //Parseo
 void Parseo (strings str,Lista_strings &parseo);
 
+int Largo_Lista (Lista_strings lis);
+
 #endif // LISTA_STRING_H_INCLUDED

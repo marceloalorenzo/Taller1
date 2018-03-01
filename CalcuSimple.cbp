@@ -43,6 +43,7 @@
 		<Unit filename="Boolean.cpp" />
 		<Unit filename="Boolean.h" />
 		<Unit filename="Comando.h" />
+		<Unit filename="Compilar.cpp" />
 		<Unit filename="Compilar.h" />
 		<Unit filename="Ejecutar.h" />
 		<Unit filename="Func_ValVal.cpp" />

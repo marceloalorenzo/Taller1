@@ -152,3 +152,18 @@ boolean streq(strings s1,strings s2)
         iguales = FALSE;
     return iguales;
 }
+
+
+boolean solo_caracteres(strings s1)
+{
+    int i = 0;
+    boolean caracter = TRUE;
+    while (caracter && s1[i] != '\0')
+    {
+        if (('a' <= s1[i]) && ('Z' >= s1[1]))
+            i++;
+        else
+            caracter = FALSE;
+    }
+    return caracter;
+}
