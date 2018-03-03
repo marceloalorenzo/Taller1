@@ -7,15 +7,15 @@ typedef struct {strings var;
                 } variable;
 
 // Devolver el nombre de la variable guardada
-void dar_variable (strings &str, variable var);
+void darVariable (strings &str, variable var);
 
 // Devolver el valor de la variable guardada
-int dar_valor_var (variable var);
+int darValorVar (variable var);
 
 // cargar la variable
-void Cargar_variable (variable &var, strings nom, int val);
+void CargarVariable (variable &var, strings nom, int val);
 
 //Mostrar en pantalla
-void Mostrar_variable (variable var);
+void MostrarVariable (variable var);
 
 #endif // VARIABLES_H_INCLUDED

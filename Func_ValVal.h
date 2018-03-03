@@ -3,25 +3,25 @@
 #include "Tipo_Funciones.h"
 #include "StringDinamico.h"
 
-typedef struct {strings var_asig;
-                tipo_funcion funcion;
+typedef struct {strings varAsig;
+                tipoFuncion funcion;
                 int param1;
                 int param2;
-                } func_valval;
+                } funcValVal;
 
 // Devolver el nombre de la variable guardada
-void dar_var_asig3 (func_valval func, strings &str);
+void darVarAsig3 (funcValVal func, strings &str);
 
 // Devolver el tipo de funcion guardada (SUM, RES, MUL, DIV)
-tipo_funcion dar_funcion_asig3 (func_valval func);
+tipoFuncion darFuncionAsig3 (funcValVal func);
 
 // Devolver el valor del parametro 1
-int dar_param1_asig3 (func_valval func);
+int darParam1Asig3 (funcValVal func);
 
 // Devolver el valor del parametro 2
-int dar_param2_asig3 (func_valval func);
+int darParam2Asig3 (funcValVal func);
 
 // Cargar la Asignaciòn 3
-void cargar_func_asig3 (func_valval &func, strings nom, tipo_funcion tp, int p1, int p2);
+void cargarFuncAsig3 (funcValVal &func, strings nom, tipoFuncion tp, int p1, int p2);
 
 #endif // FUNC_VALVAL_H_INCLUDED

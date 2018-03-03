@@ -1,31 +1,31 @@
 #include "Func_VarVar.h"
 
 // Devolver el nombre de la variable guardada
-void dar_var_asig4 (func_varvar func, strings &str)
+void darVarAsig4 (funcVarVar func, strings &str)
 {
     strcop(str,func.variable);
 }
 
 // Devolver el tipo de funcion guardada (SUM, RES, MUL, DIV)
-tipo_funcion dar_funcion_asig4 (func_varvar func)
+tipoFuncion darFuncionAsig4 (funcVarVar func)
 {
     return func.funcion;
 }
 
 // Devolver el valor del parametro 1
-void dar_param1_asig4 (func_varvar func, strings &str)
+void darParam1Asig4 (funcVarVar func, strings &str)
 {
     strcop(str,func.param1);
 }
 
 // Devolver el valor del parametro 2
-void dar_param2_asig4 (func_varvar func, strings &str)
+void darParam2Asig4 (funcVarVar func, strings &str)
 {
     strcop(str,func.param2);
 }
 
 // Cargar la Asignaciòn 4
-void cargar_func_asig4 (func_varvar &func, strings nom, tipo_funcion tp, strings p1, strings p2)
+void cargarFuncAsig4 (funcVarVar &func, strings nom, tipoFuncion tp, strings p1, strings p2)
 {
     strcrear(func.variable);
     strcop(func.variable,nom);

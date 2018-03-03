@@ -5,29 +5,29 @@
 typedef struct tnodoL   {strings info;
                         tnodoL *sig;
                        }nodoLis;
-typedef nodoLis *Lista_strings;
+typedef nodoLis *ListaStrings;
 
 //Crear lista vacìa
-void Crear_Lista_strings (Lista_strings &L);
+void CrearListaStrings (ListaStrings &L);
 
 //Agregar elemento al inicio
-void InsFront2 (strings str, Lista_strings &L);
+void InsFrontListaStrings (strings str, ListaStrings &L);
 
 //Insertar nodo al final de la lista
-void InsBack2 (strings str, Lista_strings &L);
+void InsBackListaStrings (strings str, ListaStrings &L);
 
 //Saber si una Lista_strings està vacìa
-boolean Esta_Vacia2 (Lista_strings L);
+boolean EsVaciaListaStrings (ListaStrings L);
 
 //obtener el primer elemento de una lista
-void Primero2 (Lista_strings L, strings &str);
+void PrimeroListaStrings (ListaStrings L, strings &str);
 
 // Mostrar lista por pantalla
-void Mostrar_Lista2 (Lista_strings L);
+void MostrarListaStrings (ListaStrings L);
 
 //Parseo
-void Parseo (strings str,Lista_strings &parseo);
+void Parseo (strings str,ListaStrings &parseo);
 
-int Largo_Lista (Lista_strings lis);
+int LargoListaStrings (ListaStrings lis);
 
 #endif // LISTA_STRING_H_INCLUDED

@@ -3,7 +3,7 @@
 /* ********************************************** GENERALES ************************************************ */
 
 // Determina si existe o no un archivo con el nombre recibido por parámetro
-boolean Existe(strings nomArch)
+boolean ExisteArchivo(strings nomArch)
 {
     boolean es = TRUE;
     FILE *f;
@@ -17,7 +17,7 @@ boolean Existe(strings nomArch)
 }
 
 // Determina si el archivo está vacío o no.
-boolean Vacio (strings nomArch) /* Precondición: El archivo existe */
+boolean EsVacioArchivo (strings nomArch) /* Precondición: El archivo existe */
 {
     boolean res = FALSE;
     FILE *f = fopen(nomArch,"rb");
@@ -29,7 +29,7 @@ boolean Vacio (strings nomArch) /* Precondición: El archivo existe */
 }
 
 // Devuelve la cantidad de enteros almacenados en el archivo.
-int Largo (strings nomArch) /* Precondición: El archivo existe */
+int LargoArchivo (strings nomArch) /* Precondición: El archivo existe */
 {
     int largoArch;
     FILE *f = fopen(nomArch,"rb");
@@ -41,7 +41,7 @@ int Largo (strings nomArch) /* Precondición: El archivo existe */
 
 //STRINGS
 // Escribe en el archivo los caracteres del string s (incluido '\0')
-void Bajar_strings (strings s, FILE * f) /* Precondición: El archivo viene abierto para escritura*/
+void BajarStrings (strings s, FILE * f) /* Precondición: El archivo viene abierto para escritura*/
 {
      int i = 0;
      while (s[i] != '\0')
@@ -53,7 +53,7 @@ void Bajar_strings (strings s, FILE * f) /* Precondición: El archivo viene abie
 }
 
 // Lee desde el archivo los caracteres del string s.
-void Levantar_strings (strings &s, FILE * f) /* Precondición: El archivo viene abierto para lectura.*/
+void LevantarStrings (strings &s, FILE * f) /* Precondición: El archivo viene abierto para lectura.*/
 {
      int i=0;
      strings aux;
@@ -74,52 +74,52 @@ void Levantar_strings (strings &s, FILE * f) /* Precondición: El archivo viene 
 /* ********************************************** .VARS ************************************************ */
 //VARIABLE
 // Escribe en el archivo los datos de la variable.
-void Bajar_variable (variable v, FILE * f) /* Precondición: El archivo viene abierto para escritura. */
+void BajarVariable (variable v, FILE * f) /* Precondición: El archivo viene abierto para escritura. */
 {
-    Bajar_strings (v.var, f);
+    BajarStrings (v.var, f);
     fwrite (&v.valor, sizeof(int), 1, f);
 }
 
 // Lee desde el archivo los datos de la variable.
-void Levantar_variable (variable &v, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
+void LevantarVariable (variable &v, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
 {
     strcrear(v.var);
-    Levantar_strings(v.var,f);
+    LevantarStrings(v.var,f);
     fread(&v.valor, sizeof(int),1,f);
 }
 
 // Auxiliar ABB Variables
 // Escribe en el archivo los datos de todas las variables del árbol en forma recursiva.
-void Bajar_ABB_Aux (Arbol a, FILE * f) /* PRECONDICION: El archivo viene abierto para escritura. */
+void BajarAbbAux (ArbolVariables a, FILE * f) /* PRECONDICION: El archivo viene abierto para escritura. */
 {
      if (a != NULL)
      {
-         Bajar_variable(a->info,f);
-         Bajar_ABB_Aux (a->hizq, f);
-         Bajar_ABB_Aux (a->hder, f);
+         BajarVariable(a->info,f);
+         BajarAbbAux (a->hizq, f);
+         BajarAbbAux (a->hder, f);
      }
 }
 
 // Abre el archivo para escritura y escribe los datos de todas las variables del árbol (llamando al procedimiento anterior)
 // ABB Variables
-void Bajar_ABB (Arbol a, strings NomArch)
+void BajarAbb (ArbolVariables a, strings NomArch)
 {
  FILE * f = fopen (NomArch, "wb");
- Bajar_ABB_Aux (a, f);
+ BajarAbbAux (a, f);
  fclose (f);
 }
 
 // Abre el archivo para lectura e inserta en el árbol todas las variables que están en el archivo (llamando al procedimiento ArbolABB).
 //Levantar Arbol de busqueda binario
-void Levantar_ABB (Arbol &a, strings NomArch) /* PRECONDICION: El archivo existe. */
+void LevantarAbb (ArbolVariables &a, strings NomArch) /* PRECONDICION: El archivo existe. */
 {
      FILE * f = fopen (NomArch, "rb");
      variable buffer;
-     Levantar_variable(buffer, f);
+     LevantarVariable(buffer, f);
      while (!feof(f))
      {
-         cargar_ABBvariable(a, buffer);
-         Levantar_variable(buffer, f);
+         cargarABBvariable(a, buffer);
+         LevantarVariable(buffer, f);
      }
      fclose (f);
 }
@@ -130,138 +130,138 @@ void Levantar_ABB (Arbol &a, strings NomArch) /* PRECONDICION: El archivo existe
 
 //INSTRUCCION
 //Escribe en el archivo los datos de instruccion
-void Bajar_instruccion (instruccion i, FILE * f) /* Precondición: El archivo viene abierto para escritura */
+void BajarInstruccion (instruccion i, FILE * f) /* Precondición: El archivo viene abierto para escritura */
 {
-    fwrite(&i.discriminante, sizeof(tipo_instruccion), 1, f);
+    fwrite(&i.discriminante, sizeof(tipoInstruccion), 1, f);
     switch (i.discriminante)
     {
-        case 'LEER':
+        case LEER:
             {
-                Bajar_strings(i.dato_disc.variable1,f);
+                BajarStrings(i.datoDisc.variable1,f);
             }
             break;
-        case 'MOSTRAR':
+        case MOSTRAR:
             {
-                Bajar_strings(i.dato_disc.variable2,f);
+                BajarStrings(i.datoDisc.variable2,f);
             }
             break;
-        case 'ASIG_VAL':
+        case ASIGVAL:
             {
-                Bajar_strings(i.dato_disc.asig1.var_asig,f);
-                fwrite(&i.dato_disc.asig1.val_asig, sizeof(int), 1, f);
+                BajarStrings(i.datoDisc.asig1.varAsig,f);
+                fwrite(&i.datoDisc.asig1.valAsig, sizeof(int), 1, f);
             }
             break;
-        case 'ASIG_VAR':
+        case ASIGVAR:
             {
-                Bajar_strings(i.dato_disc.asig2.var1,f);
-                Bajar_strings(i.dato_disc.asig2.var2,f);
+                BajarStrings(i.datoDisc.asig2.var1,f);
+                BajarStrings(i.datoDisc.asig2.var2,f);
             }
             break;
-        case 'FUNC_VALVAL':
+        case FUNCVALVAL:
             {
-                Bajar_strings(i.dato_disc.asig3.var_asig,f);
-                fwrite(&i.dato_disc.asig3.funcion, sizeof(tipo_funcion), 1, f);
-                fwrite(&i.dato_disc.asig3.param1, sizeof(int), 1, f);
-                fwrite(&i.dato_disc.asig3.param2, sizeof(int), 1, f);
+                BajarStrings(i.datoDisc.asig3.varAsig,f);
+                fwrite(&i.datoDisc.asig3.funcion, sizeof(tipoFuncion), 1, f);
+                fwrite(&i.datoDisc.asig3.param1, sizeof(int), 1, f);
+                fwrite(&i.datoDisc.asig3.param2, sizeof(int), 1, f);
             }
             break;
-        case 'FUNC_VARVAR':
+        case FUNCVARVAR:
             {
-                Bajar_strings(i.dato_disc.asig4.variable,f);
-                fwrite(&i.dato_disc.asig4.funcion, sizeof(tipo_funcion), 1, f);
-                Bajar_strings(i.dato_disc.asig4.param1,f);
-                Bajar_strings(i.dato_disc.asig4.param2,f);
+                BajarStrings(i.datoDisc.asig4.variable,f);
+                fwrite(&i.datoDisc.asig4.funcion, sizeof(tipoFuncion), 1, f);
+                BajarStrings(i.datoDisc.asig4.param1,f);
+                BajarStrings(i.datoDisc.asig4.param2,f);
             }
             break;
-        case 'FUNC_VARVAL':
+        case FUNCVARVAL:
             {
-                Bajar_strings(i.dato_disc.asig5.variable,f);
-                fwrite(&i.dato_disc.asig5.funcion, sizeof(tipo_funcion), 1, f);
-                Bajar_strings(i.dato_disc.asig5.param1,f);
-                fwrite(&i.dato_disc.asig5.param2, sizeof(int), 1, f);
+                BajarStrings(i.datoDisc.asig5.variable,f);
+                fwrite(&i.datoDisc.asig5.funcion, sizeof(tipoFuncion), 1, f);
+                BajarStrings(i.datoDisc.asig5.param1,f);
+                fwrite(&i.datoDisc.asig5.param2, sizeof(int), 1, f);
             }
             break;
-        case 'FUNC_VALVAR':
+        case FUNCVALVAR:
             {
-                Bajar_strings(i.dato_disc.asig6.variable,f);
-                fwrite(&i.dato_disc.asig6.funcion, sizeof(tipo_funcion), 1, f);
-                fwrite(&i.dato_disc.asig6.param1, sizeof(int), 1, f);
-                Bajar_strings(i.dato_disc.asig6.param2,f);
+                BajarStrings(i.datoDisc.asig6.variable,f);
+                fwrite(&i.datoDisc.asig6.funcion, sizeof(tipoFuncion), 1, f);
+                fwrite(&i.datoDisc.asig6.param1, sizeof(int), 1, f);
+                BajarStrings(i.datoDisc.asig6.param2,f);
             }
             break;
     }
 }
 // Lee desde el archivo los datos de la habilitad h.
-void Levantar_instruccion (instruccion &i, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
+void LevantarInstruccion (instruccion &i, FILE * f) /* Precondición: El archivo viene abierto para lectura. */
 {
-    fread(&i.discriminante, sizeof(tipo_instruccion), 1, f);
+    fread(&i.discriminante, sizeof(tipoInstruccion), 1, f);
     switch (i.discriminante)
     {
-        case 'LEER':
+        case LEER:
             {
-                strcrear(i.dato_disc.variable1);
-                Levantar_strings(i.dato_disc.variable1,f);
+                strcrear(i.datoDisc.variable1);
+                LevantarStrings(i.datoDisc.variable1,f);
             }
             break;
-        case 'MOSTRAR':
+        case MOSTRAR:
             {
-                strcrear(i.dato_disc.variable2);
-                Levantar_strings(i.dato_disc.variable2,f);
+                strcrear(i.datoDisc.variable2);
+                LevantarStrings(i.datoDisc.variable2,f);
             }
             break;
-        case 'ASIG_VAL':
+        case ASIGVAL:
             {
-                strcrear(i.dato_disc.asig1.var_asig);
-                Levantar_strings(i.dato_disc.asig1.var_asig,f);
-                fread(&i.dato_disc.asig1.val_asig, sizeof(int), 1, f);
+                strcrear(i.datoDisc.asig1.varAsig);
+                LevantarStrings(i.datoDisc.asig1.varAsig,f);
+                fread(&i.datoDisc.asig1.valAsig, sizeof(int), 1, f);
             }
             break;
-        case 'ASIG_VAR':
+        case ASIGVAR:
             {
-                strcrear(i.dato_disc.asig2.var1);
-                Levantar_strings(i.dato_disc.asig2.var1,f);
-                strcrear(i.dato_disc.asig2.var2);
-                Levantar_strings(i.dato_disc.asig2.var2,f);
+                strcrear(i.datoDisc.asig2.var1);
+                LevantarStrings(i.datoDisc.asig2.var1,f);
+                strcrear(i.datoDisc.asig2.var2);
+                LevantarStrings(i.datoDisc.asig2.var2,f);
             }
             break;
-        case 'FUNC_VALVAL':
+        case FUNCVALVAL:
             {
-                strcrear(i.dato_disc.asig3.var_asig);
-                Levantar_strings(i.dato_disc.asig3.var_asig,f);
-                fread(&i.dato_disc.asig3.funcion, sizeof(tipo_funcion), 1, f);
-                fread(&i.dato_disc.asig3.param1, sizeof(int), 1, f);
-                fread(&i.dato_disc.asig3.param2, sizeof(int), 1, f);
+                strcrear(i.datoDisc.asig3.varAsig);
+                LevantarStrings(i.datoDisc.asig3.varAsig,f);
+                fread(&i.datoDisc.asig3.funcion, sizeof(tipoFuncion), 1, f);
+                fread(&i.datoDisc.asig3.param1, sizeof(int), 1, f);
+                fread(&i.datoDisc.asig3.param2, sizeof(int), 1, f);
             }
             break;
-        case 'FUNC_VARVAR':
+        case FUNCVARVAR:
             {
-                strcrear(i.dato_disc.asig4.variable);
-                Levantar_strings(i.dato_disc.asig4.variable,f);
-                fread(&i.dato_disc.asig4.funcion, sizeof(tipo_funcion), 1, f);
-                strcrear(i.dato_disc.asig4.param1);
-                Levantar_strings(i.dato_disc.asig4.param1,f);
-                strcrear(i.dato_disc.asig4.param2);
-                Levantar_strings(i.dato_disc.asig4.param2,f);
+                strcrear(i.datoDisc.asig4.variable);
+                LevantarStrings(i.datoDisc.asig4.variable,f);
+                fread(&i.datoDisc.asig4.funcion, sizeof(tipoFuncion), 1, f);
+                strcrear(i.datoDisc.asig4.param1);
+                LevantarStrings(i.datoDisc.asig4.param1,f);
+                strcrear(i.datoDisc.asig4.param2);
+                LevantarStrings(i.datoDisc.asig4.param2,f);
             }
             break;
-        case 'FUNC_VARVAL':
+        case FUNCVARVAL:
             {
-                strcrear(i.dato_disc.asig5.variable);
-                Levantar_strings(i.dato_disc.asig5.variable,f);
-                fread(&i.dato_disc.asig5.funcion, sizeof(tipo_funcion), 1, f);
-                strcrear(i.dato_disc.asig5.param1);
-                Levantar_strings(i.dato_disc.asig5.param1,f);
-                fread(&i.dato_disc.asig5.param2, sizeof(int), 1, f);
+                strcrear(i.datoDisc.asig5.variable);
+                LevantarStrings(i.datoDisc.asig5.variable,f);
+                fread(&i.datoDisc.asig5.funcion, sizeof(tipoFuncion), 1, f);
+                strcrear(i.datoDisc.asig5.param1);
+                LevantarStrings(i.datoDisc.asig5.param1,f);
+                fread(&i.datoDisc.asig5.param2, sizeof(int), 1, f);
             }
             break;
-        case 'FUNC_VALVAR':
+        case FUNCVALVAR:
             {
-                strcrear(i.dato_disc.asig6.variable);
-                Levantar_strings(i.dato_disc.asig6.variable,f);
-                fread(&i.dato_disc.asig6.funcion, sizeof(tipo_funcion), 1, f);
-                fread(&i.dato_disc.asig6.param1, sizeof(int), 1, f);
-                strcrear(i.dato_disc.asig6.param2);
-                Levantar_strings(i.dato_disc.asig6.param2,f);
+                strcrear(i.datoDisc.asig6.variable);
+                LevantarStrings(i.datoDisc.asig6.variable,f);
+                fread(&i.datoDisc.asig6.funcion, sizeof(tipoFuncion), 1, f);
+                fread(&i.datoDisc.asig6.param1, sizeof(int), 1, f);
+                strcrear(i.datoDisc.asig6.param2);
+                LevantarStrings(i.datoDisc.asig6.param2,f);
             }
             break;
     }
@@ -270,27 +270,27 @@ void Levantar_instruccion (instruccion &i, FILE * f) /* Precondición: El archiv
 //LISTA
 // Abre el archivo para escritura y escribe los datos de todas las instrucciones que están almacenadas en la lista
 // Bajar lista
-void Bajar_Lista (Lista L , strings NomArch)
+void BajarLista (ListaInstrucciones L , strings NomArch)
 {
      FILE * f = fopen (NomArch, "wb");
      while (L != NULL)
      {
-         Bajar_instruccion(L->info, f);
+         BajarInstruccion(L->info, f);
          L = L->sig;
      }
      fclose (f);
 }
 
 // Levantar lista
-void Levantar_Lista (Lista &L, strings NomArch) /* Precondición: El archivo existe */
+void LevantarLista (ListaInstrucciones &L, strings NomArch) /* Precondición: El archivo existe */
 {
      FILE * f = fopen (NomArch, "rb");
      instruccion buffer;
-     Levantar_instruccion(buffer, f);
+     LevantarInstruccion(buffer, f);
      while (!feof(f))
      {
-         InsBack(buffer, L);
-         Levantar_instruccion(buffer, f);
+         InsBackListaInst(buffer, L);
+         LevantarInstruccion(buffer, f);
      }
      fclose (f);
 }
@@ -301,7 +301,7 @@ void Levantar_Lista (Lista &L, strings NomArch) /* Precondición: El archivo exi
 /* ********************************************** .CSIM ************************************************ */
 
 //Levanta el archivo linea por linea
-void Levantar_strings_archivo (strings &s, FILE * f) /* Precondición: El archivo existe */
+void LevantarStringsArchivo (strings &s, FILE * f) /* Precondición: El archivo existe */
 {
      int i=0;
      strings aux;
@@ -318,7 +318,7 @@ void Levantar_strings_archivo (strings &s, FILE * f) /* Precondición: El archiv
 }
 
 //Genera la lista con las lineas del archivo
-void Generar_Lista_String (Lista_strings &L, strings NomArch)
+void GenerarListaString (ListaStrings &L, strings NomArch)
 {
     FILE *f = fopen(NomArch,"rb");
     strings buffer ;
@@ -326,8 +326,8 @@ void Generar_Lista_String (Lista_strings &L, strings NomArch)
 
     do
     {
-        Levantar_strings_archivo(buffer, f);
-        InsBack2(buffer, L);
+        LevantarStringsArchivo(buffer, f);
+        InsBackListaStrings(buffer, L);
 
     } while (!feof(f));
     fclose (f);

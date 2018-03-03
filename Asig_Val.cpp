@@ -1,21 +1,21 @@
 #include "Asig_Val.h"
 
 // Devolver el nombre de la variable guardada
-void dar_var_asig1 (asig_val var, strings &str)
+void darVarAsig1 (asigVal var, strings &str)
 {
-    strcop(str, var.var_asig);
+    strcop(str, var.varAsig);
 }
 
 // Devolver el valor de la variable guardada
-int dar_val_asig1 (asig_val var)
+int darValAsig1 (asigVal var)
 {
-    return var.val_asig;
+    return var.valAsig;
 }
 
 // Aargar la asignacion 1
-void carga_var_asig1 (asig_val &var, strings nom, int val)
+void cargaVarAsig1 (asigVal &var, strings nom, int val)
 {
-    strcrear(var.var_asig);
-    strcop(var.var_asig,nom);
-    var.val_asig = val;
+    strcrear(var.varAsig);
+    strcop(var.varAsig,nom);
+    var.valAsig = val;
 }

@@ -4,24 +4,24 @@
 #include "StringDinamico.h"
 
 typedef struct {strings variable;
-                tipo_funcion funcion;
+                tipoFuncion funcion;
                 strings param1;
                 int param2;
-                } func_varval;
+                } funcVarVal;
 
 // Devolver el nombre de la variable guardada
-void dar_var_asig5 (func_varval func, strings &str);
+void darVarAsig5 (funcVarVal func, strings &str);
 
 // Devolver el tipo de funcion guardada (SUM, RES, MUL, DIV)
-tipo_funcion dar_funcion_asig5 (func_varval func);
+tipoFuncion darFuncionAsig5 (funcVarVal func);
 
 // Devolver el valor del parametro 1
-void dar_param1_asig5 (func_varval func, strings &str);
+void darParam1Asig5 (funcVarVal func, strings &str);
 
 // Devolver el valor del parametro 2
-int dar_param2_asig5 (func_varval func);
+int darParam2Asig5 (funcVarVal func);
 
 // Cargar la Asignaciòn 5
-void cargar_func_asig5 (func_varval &func, strings nom, tipo_funcion tp, strings p1, int p2);
+void cargarFuncAsig5 (funcVarVal &func, strings nom, tipoFuncion tp, strings p1, int p2);
 
 #endif // FUNC_VARVAL_H_INCLUDED

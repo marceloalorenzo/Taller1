@@ -1,13 +1,13 @@
 #include "ABB_Variables.h"
 
 //crear un árbol
-void crear(Arbol &a)
+void crearABBvariable(ArbolVariables &a)
 {
     a = NULL;
 }
 
 //Cargar ABB
-void cargar_ABBvariable (Arbol &a, variable v)
+void cargarABBvariable (ArbolVariables &a, variable v)
 {
     if(a == NULL)
     {
@@ -21,16 +21,16 @@ void cargar_ABBvariable (Arbol &a, variable v)
         strings aux1, aux2;
         strcrear(aux1);
         strcrear(aux2);
-        dar_variable(aux1,v);
-        dar_variable(aux2,a->info);
+        darVariable(aux1,v);
+        darVariable(aux2,a->info);
         if(strmen(aux1,aux2) == TRUE)
         {
-            cargar_ABBvariable(a->hizq,v);
+            cargarABBvariable(a->hizq,v);
         }
 
         else
         {
-            cargar_ABBvariable(a->hder,v);
+            cargarABBvariable(a->hder,v);
         }
         strdestruir(aux1);
         strdestruir(aux2);
@@ -38,7 +38,7 @@ void cargar_ABBvariable (Arbol &a, variable v)
 }
 
 //saber si esta vácio
-boolean ABB_vacio (Arbol a)
+boolean ABBvacio (ArbolVariables a)
 {
     boolean es=FALSE;
     if(a == NULL)
@@ -47,14 +47,14 @@ boolean ABB_vacio (Arbol a)
 }
 
 //buscar si existe variable en el arbol
-boolean existe_ABB (Arbol a, strings var)
+boolean existeEnABB (ArbolVariables a, strings var)
 {
     boolean es = FALSE;
     if (a != NULL && es != TRUE)
     {
         strings aux;
         strcrear(aux);
-        dar_variable(aux,a->info);
+        darVariable(aux,a->info);
         if(streq(aux,var) == TRUE)
         {
             es = TRUE;
@@ -63,11 +63,11 @@ boolean existe_ABB (Arbol a, strings var)
         {
             if (strmen(var,aux))
             {
-                es = existe_ABB(a->hizq, var);
+                es = existeEnABB(a->hizq, var);
             }
             else
             {
-                es = existe_ABB(a->hder, var);
+                es = existeEnABB(a->hder, var);
             }
         }
     }
@@ -75,26 +75,26 @@ boolean existe_ABB (Arbol a, strings var)
 }
 
 //Mostrar valor de una variable
-int Mostrar_valor (Arbol a, strings var)
+int MostrarValorVariable (ArbolVariables a, strings var)
 {
     if (a != NULL)
     {
         strings aux;
         strcrear(aux);
-        dar_variable(aux,a->info);
+        darVariable(aux,a->info);
         if(streq(aux,var) == TRUE)
         {
-            Mostrar_variable(a->info);
+            MostrarVariable(a->info);
         }
         else
         {
             if (strmen(var,aux))
             {
-                Mostrar_valor(a->hizq, var);
+                MostrarValorVariable(a->hizq, var);
             }
             else
             {
-                Mostrar_valor(a->hder, var);
+                MostrarValorVariable(a->hder, var);
             }
         }
         strdestruir(aux);
@@ -102,12 +102,12 @@ int Mostrar_valor (Arbol a, strings var)
 }
 
 //Mostrar arbol por pantalla
-void Mostrar_arbol(Arbol a)
+void MostrarVariablesTodas(ArbolVariables a)
 {
     if (a != NULL)
     {
-        Mostrar_arbol(a->hizq);
-        Mostrar_variable(a->info);
-        Mostrar_arbol(a->hder);
+        MostrarVariablesTodas(a->hizq);
+        MostrarVariable(a->info);
+        MostrarVariablesTodas(a->hder);
     }
 }

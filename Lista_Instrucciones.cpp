@@ -1,37 +1,48 @@
 #include "Lista_Instrucciones.h"
 
 //Crear lista vacìa
-void Crear_Lista (Lista &L)
+void CrearListaInst (ListaInstrucciones &L)
 {
     L = NULL;
 }
 
 //Agregar elemento al inicio
-void InsFront (instruccion i, Lista &L)
+void InsFrontListaInst (instruccion i, ListaInstrucciones &L)
 {
-    Lista aux = new nodoL;
+    ListaInstrucciones aux = new nodoL;
     aux->info = i;
     aux->sig = L;
     L = aux;
 }
 
 //Insertar nodo al final de la lista
-void InsBack (instruccion i, Lista &L)
+void InsBackListaInst (instruccion i, ListaInstrucciones &L)
 {
 if (L == NULL)
-    InsFront(i,L);
+    InsFrontListaInst(i,L);
     else
-    InsBack (i, L->sig);
+    InsBackListaInst (i, L->sig);
 }
 
 //Saber si una lista està vacìa
-boolean Esta_Vacia_Lista (Lista L)
+boolean EsVaciaListaInst (ListaInstrucciones L)
 {
     return boolean (L == NULL);
 }
 
 //obtener el primer elemento de una lista
-instruccion Primero (Lista L)
+instruccion PrimeroListaInst (ListaInstrucciones L)
 {
     return (L->info);
+}
+
+// Mostrar lista por pantalla
+void MostrarListaInstrucciones (ListaInstrucciones L)
+{
+    if (L != NULL)
+    {
+        MostrarInstruccion(L->info);
+        printf("\n");
+        MostrarListaInstrucciones(L->sig);
+    }
 }

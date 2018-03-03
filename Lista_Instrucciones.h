@@ -5,21 +5,24 @@
 typedef struct tnodo   {instruccion info;
                         tnodo *sig;
                        }nodoL;
-typedef nodoL *Lista;
+typedef nodoL *ListaInstrucciones;
 
 //Crear lista vacìa
-void Crear_Lista (Lista &L);
+void CrearListaInst (ListaInstrucciones &L);
 
 //Agregar elemento al inicio
-void InsFront (instruccion i, Lista &L);
+void InsFrontListaInst (instruccion i, ListaInstrucciones &L);
 
 //Insertar nodo al final de la lista
-void InsBack (instruccion i, Lista &L);
+void InsBackListaInst (instruccion i, ListaInstrucciones &L);
 
 //Saber si una lista està vacìa
-boolean Esta_Vacia_Lista (Lista L);
+boolean EsVaciaListaInst (ListaInstrucciones L);
 
 //obtener el primer elemento de una lista
-instruccion Primero (Lista L);
+instruccion PrimeroListaInst (ListaInstrucciones L);
+
+// Mostrar lista por pantalla
+void MostrarListaInstrucciones (ListaInstrucciones L);
 
 #endif // LISTA_HABILIDADES_H_INCLUDED
