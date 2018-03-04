@@ -1,6 +1,7 @@
 #ifndef STRINGDINAMICO_H_INCLUDED
 #define STRINGDINAMICO_H_INCLUDED
 #include "boolean.h"
+#include <stdlib.h>
 
 const int MAX=80;
 typedef char *strings;
@@ -36,6 +37,12 @@ boolean strmen(strings s1,strings s2);
 boolean streq(strings s1,strings s2);
 
 //Controlar si el string tiene solo caracteres
-boolean solo_caracteres(strings s1);
+boolean esStringDeCaracteres(strings s1);
+
+//Controlar si el string tiene solo numeros
+boolean esStringNumerico(strings s1);
+
+//Convertir string en entero
+int ConvertirStringEntero (strings str);
 
 #endif // STRINGDINAMICO_H_INCLUDED

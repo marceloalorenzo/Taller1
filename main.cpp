@@ -2,9 +2,34 @@
 #include "Lista_string.h"
 #include "StringDinamico.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include "Archivo.h"
 
+
+
+/*
+int main ()
+{
+    strings str;
+    strcrear(str);
+    printf("\nSTR: ");
+    scan(str);
+    boolean caract = esStringDeCaracteres(str);
+    boolean nume = esStringNumerico(str);
+
+    if (caract)
+        printf("\nCARACTER");
+    else
+        printf("\nNO CARACTER");
+
+    if (nume)
+        printf("\nNUMERICO");
+    else
+        printf("\nNO NUMERICO");
+
+    int valor = ConvertirStringEntero(str);
+    printf ("\n\nNumero es = %d",valor);
+}
+*/
 
 int main ()
 {
@@ -40,13 +65,13 @@ int main ()
             {
                 case 1: {
                         printf("\n\nLEER \n");
-                        tipoInstruccion tp = LEER;
+                        //tipoInstruccion tp = LEER;
                         strings var;
                         strcrear(var);
                         fflush(stdin);
                         printf("\n\nIngrese nombre de variable: ");
                         scan(var);
-                        CargarInsLeerMostrar(ins,tp,var);
+                        CargarInsLeerMostrar(ins,LEER,var);
                         }
                         break;
                 case 2: {
@@ -249,3 +274,4 @@ int main ()
 
     BajarLista(L,"prueba.inst");
 }
+

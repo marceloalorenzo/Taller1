@@ -154,16 +154,36 @@ boolean streq(strings s1,strings s2)
 }
 
 
-boolean solo_caracteres(strings s1)
+boolean esStringDeCaracteres(strings s1)
 {
     int i = 0;
     boolean caracter = TRUE;
     while (caracter && s1[i] != '\0')
     {
-        if (('a' <= s1[i]) && ('Z' >= s1[1]))
+        if (('a' <= s1[i] && 'z' >= s1[1]) || ('A' <= s1[i] && 'Z' >= s1[1]))
             i++;
         else
             caracter = FALSE;
     }
     return caracter;
+}
+
+
+boolean esStringNumerico(strings s1)
+{
+    int i = 0;
+    boolean numerico = TRUE;
+    while (numerico && s1[i] != '\0')
+    {
+        if ('0' <= s1[i] && '9' >= s1[i])
+            i++;
+        else
+            numerico = FALSE;
+    }
+    return numerico;
+}
+
+int ConvertirStringEntero (strings str)
+{
+    return atoi(str);
 }
