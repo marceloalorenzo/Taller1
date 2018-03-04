@@ -1,7 +1,5 @@
 #include "Compilar.h"
 
-
-
 void Compilar (strings nombreArchivo)
 {
 // ARCHIVO PARA .CSIM
@@ -9,6 +7,14 @@ void Compilar (strings nombreArchivo)
     strcon(nombreArchivo,aux);
     ListaStrings listaArchivo;
     CrearListaStrings(listaArchivo);
+
+    ListaInstrucciones instrucciones;
+    CrearListaInst(instrucciones);
+    ArbolVariables variables;
+    crearABBvariable(variables);
+
+    boolean errorEnInstruccion = FALSE;
+    boolean errorEnVariables = FALSE;
 
     GenerarListaString(listaArchivo,nombreArchivo);
 
@@ -38,10 +44,7 @@ void Compilar (strings nombreArchivo)
                         if (streq(Parseado->info,VAR) == TRUE)
                         {
                             variable vari;
-                            ArbolVariables variables;
-                            crearABBvariable(variables);
                             Parseado = Parseado->sig;
-                            boolean errorEnVariables = FALSE;
                             while (Parseado != NULL && errorEnVariables != TRUE)
                             {
                                 if (esStringDeCaracteres(Parseado->info) == TRUE)
@@ -77,10 +80,7 @@ void Compilar (strings nombreArchivo)
                                 {
                                     if (streq(Parseado->info,INS) == TRUE)
                                     {
-                                        ListaInstrucciones instrucciones;
-                                        CrearListaInst(instrucciones);
                                         instruccion inst;
-                                        boolean errorEnInstruccion = FALSE;
                                         listaArchivo = listaArchivo->sig;
                                         while (listaArchivo != NULL && errorEnInstruccion != TRUE)
                                         {
@@ -483,11 +483,6 @@ void Compilar (strings nombreArchivo)
         }
         else
             printf("\nEl nombre del programa en el archivo no es correcto.");
-        /* ************************************************************** */
-
-        MostrarListaStrings(Parseado);
-        listaArchivo = listaArchivo->sig;
-        delete (Parseado);
     }
     else
     {
@@ -496,5 +491,18 @@ void Compilar (strings nombreArchivo)
         printf("\n esta vacio. ");
     }
 
+    if (errorEnVariables == FALSE && errorEnInstruccion == FALSE)
+    {
+        strings vars;
+        strcrear(vars);
+        strings inst;
+        strcrear(inst);
+        vars = ".vars";
+        inst = ".inst";
+        strcon(vars,nombreArchivo);
+        strcon(inst,nombreArchivo);
+        BajarAbb(variables,vars);
+        BajarLista(instrucciones,nombreArchivo);
+    }
 
 }
