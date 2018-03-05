@@ -45,6 +45,7 @@
 		<Unit filename="Comando.h" />
 		<Unit filename="Compilar.cpp" />
 		<Unit filename="Compilar.h" />
+		<Unit filename="Ejecutar.cpp" />
 		<Unit filename="Ejecutar.h" />
 		<Unit filename="Func_ValVal.cpp" />
 		<Unit filename="Func_ValVal.h" />
