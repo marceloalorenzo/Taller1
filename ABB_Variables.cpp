@@ -111,3 +111,29 @@ void MostrarVariablesTodas(ArbolVariables a)
         MostrarVariablesTodas(a->hder);
     }
 }
+
+int CargarValorVariable (ArbolVariables a, strings var, int carga)
+{
+    if (a != NULL)
+    {
+        strings aux;
+        strcrear(aux);
+        darVariable(aux,a->info);
+        if(streq(aux,var) == TRUE)
+        {
+            CargarVariable(a->info,var,carga);
+        }
+        else
+        {
+            if (strmen(var,aux))
+            {
+                CargarValorVariable(a->hizq,var,carga);
+            }
+            else
+            {
+                CargarValorVariable(a->hder,var,carga);
+            }
+        }
+        strdestruir(aux);
+    }
+}
