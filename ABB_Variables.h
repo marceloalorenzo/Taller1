@@ -26,4 +26,5 @@ int MostrarValorVariable (ArbolVariables a, strings var);
 //Mostrar arbol por pantalla
 void MostrarVariablesTodas(ArbolVariables a);
 
+int CargarValorVariable (ArbolVariables a, strings var, int carga);
 #endif // ABBSOCIOS_H_INCLUDED
