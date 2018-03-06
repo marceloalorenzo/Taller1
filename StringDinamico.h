@@ -3,7 +3,7 @@
 #include "boolean.h"
 #include <stdlib.h>
 
-const int MAX=80;
+const int MAX = 80;
 typedef char *strings;
 
 // Crear string

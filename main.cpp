@@ -1,10 +1,29 @@
-#include "Lista_Instrucciones.h"
-#include "Lista_string.h"
-#include "StringDinamico.h"
 #include <stdio.h>
-#include "Archivo.h"
+#include "Compilar.h"
 
+int main()
+{
+    strings prueba;
+    strcrear(prueba);
+    prueba = "Archivo";
 
+    Compilar(prueba);
+/*
+    ArbolVariables variables;
+    ListaInstrucciones instrucciones;
+
+    LevantarAbb(variables,prueba);
+    LevantarLista(instrucciones,prueba);
+
+    printf("\n\n********************** Variables **********************\n");
+    MostrarVariablesTodas(variables);
+    printf("\n\n********************** End Variables **********************\n");
+
+    printf("\n\n********************** Instrucciones **********************\n");
+    MostrarListaInstrucciones(instrucciones);
+    printf("\n\n********************** End Instrucciones **********************\n");
+    */
+}
 
 /*
 int main ()
@@ -31,6 +50,8 @@ int main ()
 }
 */
 
+/////////////////////////////////////////////////////////////////////////////////
+/*
 int main ()
 {
     ListaInstrucciones L; //L Se llama Lista
@@ -275,3 +296,4 @@ int main ()
     BajarLista(L,"prueba.inst");
 }
 
+*/

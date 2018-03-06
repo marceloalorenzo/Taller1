@@ -306,15 +306,16 @@ void LevantarStringsArchivo (strings &s, FILE * f) /* Precondición: El archivo 
      int i=0;
      strings aux;
      aux = new char[MAX];
-     fread (&aux[i], sizeof(char), 1, f);
-     while (!feof(f) && aux[i] != '\n')
+     fflush(stdin);
+     fscanf(f, "%c", &aux[i]);
+     while (!feof(f) && aux[i] != '\n' && i < MAX )
      {
          i++;
-         fread (&aux[i], sizeof(char), 1, f);
+         fscanf(f, "%c", &aux[i]);
      }
      aux[i] = '\0';
-     strcop (s, aux);
-     delete [] aux;
+     strcop(s, aux);
+     delete []aux;
 }
 
 //Genera la lista con las lineas del archivo
@@ -322,12 +323,14 @@ void GenerarListaString (ListaStrings &L, strings NomArch)
 {
     FILE *f = fopen(NomArch,"rb");
     strings buffer ;
+    strcrear(buffer);
     //Levantar_strings_archivo(buffer,f);
 
     do
     {
         LevantarStringsArchivo(buffer, f);
         InsBackListaStrings(buffer, L);
+        strdestruir(buffer);
 
     } while (!feof(f));
     fclose (f);

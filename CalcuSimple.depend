@@ -8,14 +8,14 @@
 1520038655 c:\users\usuario\documents\github\taller1\variables.h
 	"StringDinamico.h"
 
-1520103443 c:\users\usuario\documents\github\taller1\stringdinamico.h
+1520221777 c:\users\usuario\documents\github\taller1\stringdinamico.h
 	"boolean.h"
 	<stdlib.h>
 
 1519427234 c:\users\usuario\documents\github\taller1\boolean.h
 	<stdio.h>
 
-1520053556 source:c:\users\usuario\documents\github\taller1\archivo.cpp
+1520295676 source:c:\users\usuario\documents\github\taller1\archivo.cpp
 	"Archivo.h"
 
 1520040108 c:\users\usuario\documents\github\taller1\archivo.h
@@ -61,7 +61,7 @@
 	"Tipo_Funciones.h"
 	"StringDinamico.h"
 
-1520038895 c:\users\usuario\documents\github\taller1\lista_string.h
+1520223204 c:\users\usuario\documents\github\taller1\lista_string.h
 	"StringDinamico.h"
 
 1520049828 source:c:\users\usuario\documents\github\taller1\asig_val.cpp
@@ -90,7 +90,7 @@
 1520049522 source:c:\users\usuario\documents\github\taller1\lista_instrucciones.cpp
 	"Lista_Instrucciones.h"
 
-1520038895 source:c:\users\usuario\documents\github\taller1\lista_string.cpp
+1520295284 source:c:\users\usuario\documents\github\taller1\lista_string.cpp
 	"Lista_string.h"
 
 1520104156 source:c:\users\usuario\documents\github\taller1\stringdinamico.cpp
@@ -102,12 +102,9 @@
 1519527060 source:c:\users\usuario\documents\github\taller1\tipo_instrucciones.cpp
 	"Tipo_Instrucciones.h"
 
-1520112033 source:c:\users\usuario\documents\github\taller1\main.cpp
-	"Lista_Instrucciones.h"
-	"Lista_string.h"
-	"StringDinamico.h"
+1520208687 source:c:\users\usuario\documents\github\taller1\main.cpp
 	<stdio.h>
-	"Archivo.h"
+	"Compilar.h"
 
 1520038655 source:c:\users\usuario\documents\github\taller1\variables.cpp
 	"Variables.h"
@@ -217,10 +214,10 @@
 1519773778 source:c:\users\pyxis infra\documents\github\taller1\lista_instrucciones.cpp
 	"Lista_Instrucciones.h"
 
-1520049917 source:c:\users\usuario\documents\github\taller1\compilar.cpp
+1520293528 source:c:\users\usuario\documents\github\taller1\compilar.cpp
 	"Compilar.h"
 
-1519881358 c:\users\usuario\documents\github\taller1\compilar.h
+1520206820 c:\users\usuario\documents\github\taller1\compilar.h
 	"Archivo.h"
 	"Lista_string.h"
 

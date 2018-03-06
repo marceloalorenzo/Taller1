@@ -6,7 +6,10 @@
 const strings PROG = "PROGRAMA";
 const strings VAR = "VARIABLES";
 const strings INS = "INSTRUCCIONES";
+const strings EXTCSIM = ".csim";
+const strings EXTVARS = ".vars";
+const strings EXTINST = ".inst";
 
-void Compilar (strings str);
+void Compilar (strings nombreArchivo);
 
 #endif // COMPILAR_H_INCLUDED
