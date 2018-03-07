@@ -74,14 +74,14 @@ void Compilar (strings nombreArchivo)
                                 else
                                 {
                                     errorCompilacion = TRUE;
-                                    printf("Error de compilacion: No existe la palabra INSTRUCCIONES.");
+                                    printf("Error de compilacion: No existe la palabra INSTRUCCIONES.\n\n");
                                     system ("pause");
                                 }
                             }
                             else
                             {
                                 errorCompilacion = TRUE;
-                                printf("Error de compilacion: Debe existir solamente la palabra INSTRUCCIONES en esta linea.");
+                                printf("Error de compilacion: Debe existir solamente la palabra INSTRUCCIONES en esta linea.\n\n");
                                 system ("pause");
                             }
                         }
@@ -89,30 +89,30 @@ void Compilar (strings nombreArchivo)
                     else
                     {
                         errorCompilacion = TRUE;
-                        printf("\n\nEl nombre del archivo no coincide con el nombre en el PROGRAMA.");
+                        printf("\n\nEl nombre del archivo no coincide con el nombre en el PROGRAMA.\n");
                         system ("pause");
                     }
                 }
                 else
                 {
                     errorCompilacion = TRUE;
-                    printf("\n\nEl programa no inicia con la palabra: PROGRAMA.");
+                    printf("\n\nEl programa no inicia con la palabra: PROGRAMA.\n");
                     system ("pause");
                 }
             }
         }
         else
         {
-            printf("\nEl nombre del programa no contiene la cantidad de palabras correctas");
+            printf("\nEl nombre del programa no contiene la cantidad de palabras correctas.\n");
             print(listaArchivo->info);
             system ("pause");
         }
     }
     else
     {
-        printf("\n\nEl archivo ");
+        printf("\n\nEl archivo ''");
         print(nombreArchivo);
-        printf("\n esta vacio. ");
+        printf("'' esta vacio. \n\n");
         system ("pause");
     }
 
@@ -142,6 +142,11 @@ void Compilar (strings nombreArchivo)
 
         BajarAbb(variables,auxVars);
         BajarLista(instrucciones,auxInst);
+
+        printf("\n\nEl archivo ''");
+        print(nombreArchivo);
+        printf("'' compilo correctamente. \n\n");
+        system ("pause");
 
         strdestruir(auxInst);
         strdestruir(auxVars);
@@ -177,14 +182,14 @@ void compilarVariables (ListaStrings Parseado, ArbolVariables &variables, boolea
                 else
                 {
                     errorEnVariables = TRUE;
-                    printf("\n\nError de compilacion: La variable esta duplicada.");
+                    printf("\n\nError de compilacion: La variable esta duplicada.\n\n");
                     system ("pause");
                 }
             }
             else
             {
                 errorEnVariables = TRUE;
-                printf("\n\nError de compilacion: La variable no contiene solamente caracteres.");
+                printf("\n\nError de compilacion: La variable no contiene solamente caracteres.\n\n");
                 system ("pause");
             }
         }
@@ -192,7 +197,7 @@ void compilarVariables (ListaStrings Parseado, ArbolVariables &variables, boolea
     else
     {
         errorEnVariables = TRUE;
-        printf("\n\nError de compilacion: No existe la palabra VARIABLES.");
+        printf("\n\nError de compilacion: No existe la palabra VARIABLES.\n\n");
         system ("pause");
     }
 }
@@ -216,14 +221,14 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                 }
                 else
                 {
-                    printf("\n\nLa variable no fue declarada.");
+                    printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                     errorEnInstruccion = TRUE;
                     system ("pause");
                 }
             }
             else
             {
-                printf("\n\nError de compilacion: Instruccion LEER incorrecta.");
+                printf("\n\nError de compilacion: Instruccion LEER incorrecta.\n\n");
                 errorEnInstruccion = TRUE;
                 system ("pause");
             }
@@ -250,7 +255,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                 else
                 {
                     errorEnInstruccion = TRUE;
-                    printf("\n\nError de compilacion: Instruccion MOSTRAR incorrecta.");
+                    printf("\n\nError de compilacion: Instruccion MOSTRAR incorrecta.\n\n");
                     system ("pause");
                 }
             }
@@ -287,14 +292,14 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                     else
                                     {
                                         errorEnInstruccion = TRUE;
-                                        printf("\n\nError de compilacion: La variable no fue declarada.");
+                                        printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                         system ("pause");
                                     }
                                 }
                                 else
                                 {
                                     errorEnInstruccion = TRUE;
-                                    printf("\n\nError de compilacion:El campo declarado no es correcto.");
+                                    printf("\n\nError de compilacion:El campo declarado no es correcto.\n\n");
                                     system ("pause");
                                 }
                             }
@@ -302,14 +307,14 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                         else
                         {
                             errorEnInstruccion = TRUE;
-                            printf("\n\nError de compilacion:Falta signo de '=' en la asignacion.");
+                            printf("\n\nError de compilacion:Falta signo de '=' en la asignacion.\n\n");
                             system ("pause");
                         }
                     }
                     else
                     {
                         errorEnInstruccion = TRUE;
-                        printf("\n\nError de compilacion: La variable no fue declarada.");
+                        printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                         system ("pause");
                     }
                 }
@@ -352,7 +357,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                             else
                                             {
                                                 errorEnInstruccion = TRUE;
-                                                printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                 system ("pause");
                                             }
                                         }
@@ -382,7 +387,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                 else
                                                 {
                                                     errorEnInstruccion = TRUE;
-                                                    printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                    printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                     system ("pause");
                                                 }
                                             }
@@ -390,7 +395,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                         else
                                         {
                                             errorEnInstruccion = TRUE;
-                                            printf("\n\nError de compilacion: La variable no fue declarada.");
+                                            printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                             system ("pause");
                                         }
                                     }
@@ -422,7 +427,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                 else
                                                 {
                                                     errorEnInstruccion = TRUE;
-                                                    printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                    printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                     system ("pause");
                                                 }
                                             }
@@ -452,7 +457,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                     else
                                                     {
                                                         errorEnInstruccion = TRUE;
-                                                        printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                        printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                         system ("pause");
                                                     }
                                                 }
@@ -460,7 +465,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                             else
                                             {
                                                 errorEnInstruccion = TRUE;
-                                                printf("\n\nError de compilacion: La variable no fue declarada.");
+                                                printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                 system ("pause");
                                             }
                                         }
@@ -492,7 +497,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                     else
                                                     {
                                                         errorEnInstruccion = TRUE;
-                                                        printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                        printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                         system ("pause");
                                                     }
                                                 }
@@ -522,7 +527,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                         else
                                                         {
                                                             errorEnInstruccion = TRUE;
-                                                            printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                            printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                             system ("pause");
                                                         }
                                                     }
@@ -530,7 +535,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                 else
                                                 {
                                                     errorEnInstruccion = TRUE;
-                                                    printf("\n\nError de compilacion: La variable no fue declarada.");
+                                                    printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                     system ("pause");
                                                 }
                                             }
@@ -556,7 +561,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                         else
                                                         {
                                                             errorEnInstruccion = TRUE;
-                                                            printf("\n\nError de compilacion: El segundo parametro no puede ser cero en la funcion DIV.");
+                                                            printf("\n\nError de compilacion: El segundo parametro no puede ser cero en la funcion DIV.\n\n");
                                                             system ("pause");
                                                         }
                                                     }
@@ -571,7 +576,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                         else
                                                         {
                                                             errorEnInstruccion = TRUE;
-                                                            printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                            printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                             system ("pause");
                                                         }
                                                     }
@@ -595,7 +600,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                             else
                                                             {
                                                                 errorEnInstruccion = TRUE;
-                                                                printf("\n\nError de compilacion: El segundo parametro no puede ser cero en la funcion DIV.");
+                                                                printf("\n\nError de compilacion: El segundo parametro no puede ser cero en la funcion DIV.\n\n");
                                                                 system ("pause");
                                                             }
                                                         }
@@ -610,7 +615,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                             else
                                                             {
                                                                 errorEnInstruccion = TRUE;
-                                                                printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                                                                printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                                 system ("pause");
                                                             }
                                                         }
@@ -618,7 +623,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                                     else
                                                     {
                                                         errorEnInstruccion = TRUE;
-                                                        printf("\n\nError de compilacion: La variable no fue declarada.");
+                                                        printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                                                         system ("pause");
                                                     }
                                                 }
@@ -626,7 +631,7 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                                             else
                                             {
                                                 errorEnInstruccion = TRUE;
-                                                printf("\n\nError de compilacion: La instruccion no es valida.");
+                                                printf("\n\nError de compilacion: La instruccion no es valida.\n\n");
                                                 system ("pause");
                                             }
                                         }
@@ -636,21 +641,21 @@ void compilarInstrucciones (ArbolVariables variables, ListaStrings Parseado, Lis
                             else
                             {
                                 errorEnInstruccion = TRUE;
-                                printf("\n\nError de compilacion:Falta signo de '=' en la asignacion.");
+                                printf("\n\nError de compilacion:Falta signo de '=' en la asignacion.\n\n");
                                 system ("pause");
                             }
                         }
                         else
                         {
                             errorEnInstruccion = TRUE;
-                            printf("\n\nError de compilaciòn: La variable no fue declarada.");
+                            printf("\n\nError de compilacion: La variable no fue declarada.\n\n");
                             system ("pause");
                         }
                     }
                     else
                     {
                         errorEnInstruccion = TRUE;
-                        printf("\n\nError de compilacion: La instruccion no es correcta.");
+                        printf("\n\nError de compilacion: La instruccion no es correcta.\n\n");
                         system ("pause");
                     }
                 }
