@@ -1,6 +1,6 @@
 #include "Ejecutar.h"
 
-/*
+
 void Ejecutar (strings str)
 
 
@@ -57,11 +57,111 @@ void Ejecutar (strings str)
                                 CargarValorVariable(variables,instrucciones->info.datoDisc.asig2.var1,instrucciones->info.datoDisc.asig2.var2);
                                 }
                                 break;
-                case FUNCVALVAR:
+                case FUNCVALVAL:
                                 {
+                                //segun tipo de funcion
+                                //
+                                switch()
+                                case SUM:
+                                            {
+
+                                            }
+                                            break;
+                                case RES:
+                                            {
+
+                                            }
+                                            break;
+                                case MUL:
+                                            {
+
+                                            }
+                                            break;
+                                case DIV:
+                                            {
+
+                                            }
+                                            break;
+
 
                                 }
                                 break;
+                case FUNCVARVAR:
+                                {
+                                     switch()
+                                case SUM:
+                                            {
+
+                                            }
+                                            break;
+                                case RES:
+                                            {
+
+                                            }
+                                            break;
+                                case MUL:
+                                            {
+
+                                            }
+                                            break;
+                                case DIV:
+                                            {
+
+                                            }
+                                            break;
+                                }
+                                break;
+                case FUNCVARVAL:
+                                {
+                                     switch()
+                                case SUM:
+                                            {
+
+                                            }
+                                            break;
+                                case RES:
+                                            {
+
+                                            }
+                                            break;
+                                case MUL:
+                                            {
+
+                                            }
+                                            break;
+                                case DIV:
+                                            {
+
+                                            }
+                                            break;
+                                }
+                                break;
+                case FUNCVALVAR:
+                                {
+                                     switch()
+                                case SUM:
+                                            {
+
+                                            }
+                                            break;
+                                case RES:
+                                            {
+
+                                            }
+                                            break;
+                                case MUL:
+                                            {
+
+                                            }
+                                            break;
+                                case DIV:
+                                            {
+
+                                            }
+                                            break;
+                                }
+                                break;
+
         }
     else
         {
@@ -78,4 +178,3 @@ void Ejecutar (strings str)
 
 }
 
-*/
