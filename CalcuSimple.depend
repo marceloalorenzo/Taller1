@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1520376977 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
+1520395285 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
 	"ABB_Variables.h"
 
-1520376977 c:\users\usuario\documents\github\taller1\abb_variables.h
+1520395274 c:\users\usuario\documents\github\taller1\abb_variables.h
 	"Variables.h"
 
 1520038655 c:\users\usuario\documents\github\taller1\variables.h
@@ -26,7 +26,7 @@
 1520049522 c:\users\usuario\documents\github\taller1\lista_instrucciones.h
 	"Instrucciones.h"
 
-1520051681 c:\users\usuario\documents\github\taller1\instrucciones.h
+1520394220 c:\users\usuario\documents\github\taller1\instrucciones.h
 	"Tipo_Instrucciones.h"
 	"Asig_Val.h"
 	"Asig_Var.h"
@@ -84,7 +84,7 @@
 1520038097 source:c:\users\usuario\documents\github\taller1\func_varvar.cpp
 	"Func_VarVar.h"
 
-1520052481 source:c:\users\usuario\documents\github\taller1\instrucciones.cpp
+1520394220 source:c:\users\usuario\documents\github\taller1\instrucciones.cpp
 	"Instrucciones.h"
 
 1520049522 source:c:\users\usuario\documents\github\taller1\lista_instrucciones.cpp
@@ -214,7 +214,7 @@
 1519773778 source:c:\users\pyxis infra\documents\github\taller1\lista_instrucciones.cpp
 	"Lista_Instrucciones.h"
 
-1520389721 source:c:\users\usuario\documents\github\taller1\compilar.cpp
+1520389811 source:c:\users\usuario\documents\github\taller1\compilar.cpp
 	"Compilar.h"
 
 1520387838 c:\users\usuario\documents\github\taller1\compilar.h
@@ -341,9 +341,9 @@
 1520217214 source:c:\users\mlorenzo\documents\github\taller1\variables.cpp
 	"Variables.h"
 
-1520377929 source:c:\users\usuario\documents\github\taller1\ejecutar.cpp
+1520403208 source:c:\users\usuario\documents\github\taller1\ejecutar.cpp
 	"Ejecutar.h"
 
-1520376977 c:\users\usuario\documents\github\taller1\ejecutar.h
+1520402788 c:\users\usuario\documents\github\taller1\ejecutar.h
 	"Archivo.h"
 

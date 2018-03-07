@@ -62,7 +62,7 @@ void CargarInsFuncVarVar (instruccion &i, strings str, tipoFuncion func, strings
 }
 
 //Devolver el tipo de instruccion (LEER, MOSTRAR, ASIG_VAL, ASIG_VAR, FUNC_VALVAL, FUNC_VARVAR, FUNC_VARVAL, FUNC_VALVAR)
-tipoInstruccion dar_tipo_inst (instruccion i)
+tipoInstruccion darTipoInst (instruccion i)
 {
     return i.discriminante;
 }

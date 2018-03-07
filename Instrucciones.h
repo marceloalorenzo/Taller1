@@ -42,7 +42,7 @@ void CargarInsFuncVarVal (instruccion &i, strings str, tipoFuncion func, strings
 void CargarInsFuncVarVar (instruccion &i, strings str, tipoFuncion func, strings parm1, strings param2);
 
 //Devolver el tipo de instruccion (LEER, MOSTRAR, ASIG_VAL, ASIG_VAR, FUNC_VALVAL, FUNC_VARVAR, FUNC_VARVAL, FUNC_VALVAR)
-tipoInstruccion dar_tipo_inst (instruccion i);
+tipoInstruccion darTipoInst (instruccion i);
 
 //Mostrar Instruccion por pantalla
 void MostrarInstruccion (instruccion i);
