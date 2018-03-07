@@ -61,25 +61,52 @@ void Ejecutar (strings str)
                                 {
                                 //segun tipo de funcion
                                 //
-                                switch()
+                                switch(tipoFuncion)
                                 case SUM:
                                             {
-
+                                                Obtengo datos guardados en param1 y param2
+                                                Realizo la suma de param1 + param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case RES:
                                             {
-
+                                                Obtengo datos guardados en param1 y param2
+                                                Realizo la resta de param1 - param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case MUL:
                                             {
-
+                                                Obtengo datos guardados en param1 y param2
+                                                Realizo la multiplicación de param1 * param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case DIV:
                                             {
+                                                Obtengo el dato guardado en param2
 
+                                                SI	param2 es igual a cero	ENTONCES
+                                                    Error de ejecución (El segundo término no puede ser cero)
+                                                    Finalizo ejecución
+                                                SINO
+                                                    Obtengo el dato guardado en param1
+                                                    Realizo la división de param1 / param2
+                                                    Guardo el valor en un auxiliar
+                                                    Obtengo el nombre de la variable del campo variable
+                                                    Busco en el ABB la variable
+                                                    Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
+                                                FIN SI
                                             }
                                             break;
 
@@ -88,24 +115,60 @@ void Ejecutar (strings str)
                                 break;
                 case FUNCVARVAR:
                                 {
-                                     switch()
+                                     switch(tipoFuncion)
                                 case SUM:
                                             {
-
+                                                Obtengo los nombres de las variables guardados en param1 y param2
+                                                Busco en el ABB el valor guardado para la variable del param1
+                                                Busco en el ABB el valor guardado para la variable del param2
+                                                Realizo la suma de param1 + param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case RES:
                                             {
-
+                                                Obtengo los nombres de las variables guardados en param1 y param2
+                                                Busco en el ABB el valor guardado para la variable del param1
+                                                Busco en el ABB el valor guardado para la variable del param2
+                                                Realizo la resta de param1 - param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case MUL:
                                             {
-
+                                                Obtengo los nombres de las variables guardados en param1 y param2
+                                                Busco en el ABB el valor guardado para la variable del param1
+                                                Busco en el ABB el valor guardado para la variable del param2
+                                                Realizo la multiplicación de param1 * param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case DIV:
                                             {
+                                                Obtengo el nombre de la variable guardada en param2
+                                                Busco en el ABB el valor guardado para la variable del param2
+
+                                                SI	param2 es igual a cero	ENTONCES
+                                                    Error de ejecución (El segundo término no puede ser cero)
+                                                    Finalizo ejecución
+                                                SINO
+                                                    Obtengo el nombre de la variable guardada en param1
+                                                    Busco en el ABB el valor guardado para la variable del param1
+                                                    Realizo la división de param1 / param2
+                                                    Guardo el valor en un auxiliar
+                                                    Obtengo el nombre de la variable del campo variable
+                                                    Busco en el ABB la variable
+                                                    Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
+                                                FIN SI
 
                                             }
                                             break;
@@ -113,50 +176,109 @@ void Ejecutar (strings str)
                                 break;
                 case FUNCVARVAL:
                                 {
-                                     switch()
+                                     switch(tipoFuncion)
                                 case SUM:
                                             {
-
+                                                Obtengo el nombre de la variable guardada en param1
+                                                Busco en el ABB el valor guardado para la variable del param1
+                                                Realizo la suma de param1 + param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case RES:
                                             {
-
+                                                Obtengo el nombre de la variable guardada en param1
+                                                Busco en el ABB el valor guardado para la variable del param1
+                                                Realizo la resta de param1 - param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case MUL:
                                             {
-
+                                                Obtengo el nombre de la variable guardada en param1
+                                                Busco en el ABB el valor guardado para la variable del param1
+                                                Realizo la multiplicación de param1 * param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case DIV:
                                             {
-
+                                            SI	param2 es igual a cero	ENTONCES
+                                                Error de ejecución (El segundo término no puede ser cero)
+                                                Finalizo ejecución
+                                            SINO
+                                                Obtengo el nombre de la variable guardada en param1
+                                                Busco en el ABB el valor guardado para la variable del param1
+                                                Realizo la división de param1 / param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
+                                            FIN SI
                                             }
                                             break;
                                 }
                                 break;
                 case FUNCVALVAR:
                                 {
-                                     switch()
+                                     switch(tipoFuncion)
                                 case SUM:
                                             {
-
+                                                Obtengo el nombre de la variable guardada en param2
+                                                Busco en el ABB el valor guardado para la variable del param2
+                                                Realizo la suma de param1 + param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case RES:
                                             {
-
+                                                Obtengo el nombre de la variable guardada en param
+                                                Busco en el ABB el valor guardado para la variable del param2
+                                                Realizo la resta de param1 - param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case MUL:
                                             {
-
+                                                Obtengo el nombre de la variable guardada en param2
+                                                Busco en el ABB el valor guardado para la variable del param2
+                                                Realizo la multiplicación de param1 * param2
+                                                Guardo el valor en un auxiliar
+                                                Obtengo el nombre de la variable del campo variable
+                                                Busco en el ABB la variable
+                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
                                             }
                                             break;
                                 case DIV:
                                             {
+                                                Obtengo el nombre de la variable guardada en param2
+                                                Busco en el ABB el valor guardado para la variable del param2
 
+                                                SI	param2 es igual a cero	ENTONCES
+                                                    Error de ejecución (El segundo término no puede ser cero)
+                                                    Finalizo ejecución
+                                                SINO
+                                                    Realizo la división de param1 / param2
+                                                    Guardo el valor en un auxiliar
+                                                    Obtengo el nombre de la variable del campo variable
+                                                    Busco en el ABB la variable
+                                                    Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
+                                                FIN SI
                                             }
                                             break;
                                 }
