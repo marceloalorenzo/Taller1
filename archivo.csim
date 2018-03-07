@@ -1,6 +1,6 @@
 PROGRAMA Archivo 
 VARIABLES prim seg ter cuar quin sex sept octa
-INSTRUCCIONES
+INSTRUCCIONES    
 LEER prim
 MOSTRAR prim
 seg = 5

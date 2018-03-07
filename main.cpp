@@ -10,8 +10,9 @@ int main()
     strcrear(prueba);
     prueba = "Archivo";
 
-//    Compilar(prueba);
+    Compilar(prueba);
 
+/*
     ArbolVariables variables;
     crearABBvariable(variables);
     ListaInstrucciones instrucciones;
@@ -40,7 +41,7 @@ int main()
     printf("\n\n********************** Instrucciones **********************\n");
     MostrarListaInstrucciones(instrucciones);
     printf("\n\n********************** End Instrucciones **********************\n");
-
+*/
 }
 
 /*
