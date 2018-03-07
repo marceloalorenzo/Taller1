@@ -21,10 +21,13 @@ boolean ABBvacio (ArbolVariables a);
 boolean existeEnABB (ArbolVariables a, strings var);
 
 //Mostrar valor de una variable
-int MostrarValorVariable (ArbolVariables a, strings var);
+void MostrarValorVariable (ArbolVariables a, strings var);
 
 //Mostrar arbol por pantalla
 void MostrarVariablesTodas(ArbolVariables a);
 
-int CargarValorVariable (ArbolVariables a, strings var, int carga);
+void CargarValorVariable (ArbolVariables &a, strings var, int carga);
+
+int darValorVariable (ArbolVariables variables, strings nombre);
+
 #endif // ABBSOCIOS_H_INCLUDED

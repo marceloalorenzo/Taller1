@@ -75,7 +75,7 @@ boolean existeEnABB (ArbolVariables a, strings var)
 }
 
 //Mostrar valor de una variable
-int MostrarValorVariable (ArbolVariables a, strings var)
+void MostrarValorVariable (ArbolVariables a, strings var)
 {
     if (a != NULL)
     {
@@ -112,7 +112,7 @@ void MostrarVariablesTodas(ArbolVariables a)
     }
 }
 
-int CargarValorVariable (ArbolVariables a, strings var, int carga)
+void CargarValorVariable (ArbolVariables &a, strings var, int carga)
 {
     if (a != NULL)
     {
@@ -132,6 +132,32 @@ int CargarValorVariable (ArbolVariables a, strings var, int carga)
             else
             {
                 CargarValorVariable(a->hder,var,carga);
+            }
+        }
+        strdestruir(aux);
+    }
+}
+
+int darValorVariable (ArbolVariables variables, strings nombre)
+{
+    if (variables != NULL)
+    {
+        strings aux;
+        strcrear(aux);
+        darVariable(aux,variables->info);
+        if(streq(aux,nombre) == TRUE)
+        {
+           return darValorVar(variables->info);
+        }
+        else
+        {
+            if (strmen(nombre,aux))
+            {
+                darValorVariable(variables->hizq,nombre);
+            }
+            else
+            {
+                darValorVariable(variables->hder,nombre);
             }
         }
         strdestruir(aux);
