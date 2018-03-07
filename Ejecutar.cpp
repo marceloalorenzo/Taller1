@@ -1,6 +1,6 @@
 #include "Ejecutar.h"
 
-
+/*
 void Ejecutar (strings str)
 
 
@@ -78,3 +78,4 @@ void Ejecutar (strings str)
 
 }
 
+*/

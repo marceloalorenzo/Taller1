@@ -303,19 +303,21 @@ void LevantarLista (ListaInstrucciones &L, strings NomArch) /* Precondición: El
 //Levanta el archivo linea por linea
 void LevantarStringsArchivo (strings &s, FILE * f) /* Precondición: El archivo existe */
 {
-     int i=0;
-     strings aux;
-     aux = new char[MAX];
-     fflush(stdin);
-     fscanf(f, "%c", &aux[i]);
-     while (!feof(f) && aux[i] != '\n' && i < MAX )
-     {
-         i++;
-         fscanf(f, "%c", &aux[i]);
-     }
-     aux[i] = '\0';
-     strcop(s, aux);
-     delete []aux;
+    int i=0;
+    strings aux;
+    aux = new char[MAX];
+    fflush(stdin);
+    fscanf(f, "%c", &aux[i]);
+    while (!feof(f) && aux[i] != '\n' && i < MAX )
+    {
+        i++;
+        fscanf(f, "%c", &aux[i]);
+    }
+
+    aux[i-1] = '\0';
+
+    strcop(s, aux);
+    delete []aux;
 }
 
 //Genera la lista con las lineas del archivo

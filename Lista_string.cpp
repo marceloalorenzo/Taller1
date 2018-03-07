@@ -65,7 +65,7 @@ void Parseo (strings str,ListaStrings &parseo)
     int i = 0;
     while (str[i] != '\0')
     {
-        if (str[i] == ' ' || str[i] == '\r')
+        if (str[i] == ' ')
         {
             i++;
         }

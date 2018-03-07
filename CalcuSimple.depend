@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1520039726 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
+1520376977 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
 	"ABB_Variables.h"
 
-1520039726 c:\users\usuario\documents\github\taller1\abb_variables.h
+1520376977 c:\users\usuario\documents\github\taller1\abb_variables.h
 	"Variables.h"
 
 1520038655 c:\users\usuario\documents\github\taller1\variables.h
@@ -15,7 +15,7 @@
 1519427234 c:\users\usuario\documents\github\taller1\boolean.h
 	<stdio.h>
 
-1520295676 source:c:\users\usuario\documents\github\taller1\archivo.cpp
+1520379962 source:c:\users\usuario\documents\github\taller1\archivo.cpp
 	"Archivo.h"
 
 1520040108 c:\users\usuario\documents\github\taller1\archivo.h
@@ -90,7 +90,7 @@
 1520049522 source:c:\users\usuario\documents\github\taller1\lista_instrucciones.cpp
 	"Lista_Instrucciones.h"
 
-1520295284 source:c:\users\usuario\documents\github\taller1\lista_string.cpp
+1520378331 source:c:\users\usuario\documents\github\taller1\lista_string.cpp
 	"Lista_string.h"
 
 1520104156 source:c:\users\usuario\documents\github\taller1\stringdinamico.cpp
@@ -102,7 +102,7 @@
 1519527060 source:c:\users\usuario\documents\github\taller1\tipo_instrucciones.cpp
 	"Tipo_Instrucciones.h"
 
-1520208687 source:c:\users\usuario\documents\github\taller1\main.cpp
+1520382015 source:c:\users\usuario\documents\github\taller1\main.cpp
 	<stdio.h>
 	"Compilar.h"
 
@@ -214,10 +214,10 @@
 1519773778 source:c:\users\pyxis infra\documents\github\taller1\lista_instrucciones.cpp
 	"Lista_Instrucciones.h"
 
-1520293528 source:c:\users\usuario\documents\github\taller1\compilar.cpp
+1520387919 source:c:\users\usuario\documents\github\taller1\compilar.cpp
 	"Compilar.h"
 
-1520206820 c:\users\usuario\documents\github\taller1\compilar.h
+1520387838 c:\users\usuario\documents\github\taller1\compilar.h
 	"Archivo.h"
 	"Lista_string.h"
 
@@ -340,4 +340,10 @@
 
 1520217214 source:c:\users\mlorenzo\documents\github\taller1\variables.cpp
 	"Variables.h"
+
+1520377929 source:c:\users\usuario\documents\github\taller1\ejecutar.cpp
+	"Ejecutar.h"
+
+1520376977 c:\users\usuario\documents\github\taller1\ejecutar.h
+	"Archivo.h"
 

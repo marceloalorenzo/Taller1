@@ -20,4 +20,4 @@ octa = DIV octa 3
 quin = SUM 3 prim
 sex = RES 5 ter
 sept = MUL 1 sex
-octa = DIV 8 octa
+octa = DIV 8 octav

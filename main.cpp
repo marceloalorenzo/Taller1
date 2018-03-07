@@ -1,19 +1,37 @@
 #include <stdio.h>
 #include "Compilar.h"
 
+const strings EXTEVAR = ".vars";
+const strings EXTEINS = ".inst";
+
 int main()
 {
     strings prueba;
     strcrear(prueba);
     prueba = "Archivo";
 
-    Compilar(prueba);
-/*
-    ArbolVariables variables;
-    ListaInstrucciones instrucciones;
+//    Compilar(prueba);
 
-    LevantarAbb(variables,prueba);
-    LevantarLista(instrucciones,prueba);
+    ArbolVariables variables;
+    crearABBvariable(variables);
+    ListaInstrucciones instrucciones;
+    CrearListaInst(instrucciones);
+
+    strings auxInst;
+    strcrear(auxInst);
+    strcop(auxInst,prueba);
+    strcon(auxInst,EXTEINS);
+    print(auxInst);
+
+    strings auxVars;
+    strcrear(auxVars);
+    strcop(auxVars,prueba);
+    strcon(auxVars,EXTEVAR);
+    print(auxVars);
+
+    LevantarAbb(variables,auxVars);
+
+    LevantarLista(instrucciones,auxInst);
 
     printf("\n\n********************** Variables **********************\n");
     MostrarVariablesTodas(variables);
@@ -22,7 +40,7 @@ int main()
     printf("\n\n********************** Instrucciones **********************\n");
     MostrarListaInstrucciones(instrucciones);
     printf("\n\n********************** End Instrucciones **********************\n");
-    */
+
 }
 
 /*
