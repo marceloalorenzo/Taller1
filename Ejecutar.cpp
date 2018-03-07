@@ -70,6 +70,11 @@ void Ejecutar (strings str)
                                                 Obtengo el nombre de la variable del campo variable
                                                 Busco en el ABB la variable
                                                 Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
+
+                                                int auxParam;
+                                                auxParam = param1 + param2;
+                                                darVarAsig3()
+
                                             }
                                             break;
                                 case RES:
@@ -284,7 +289,7 @@ void Ejecutar (strings str)
                                 }
                                 break;
 
-        }
+            }
     else
         {
         printf("ERROR, no existen uno de los archivos .csim o .vars");
