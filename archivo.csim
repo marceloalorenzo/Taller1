@@ -1,3 +1,23 @@
-Probando carga
-de un archivo
-a ver que pasa
+PROGRAMA Archivo 
+VARIABLES prim seg ter cuar quin sex sept octa
+INSTRUCCIONES
+LEER prim
+MOSTRAR prim
+seg = 5
+ter = cuar
+quin = SUM seg cuar
+sex = RES quin sept
+sept = MUL sex prim
+octa = DIV ter cuar
+quin = SUM 5 0
+sex = RES 8 3
+sept = MUL 3 2
+octa = DIV 9 3
+quin = SUM prim 0
+sex = RES ter 3
+sept = MUL sex 2
+octa = DIV octa 3
+quin = SUM 3 prim
+sex = RES 5 ter
+sept = MUL 1 sex
+octa = DIV 8 octav

@@ -10,6 +10,9 @@ typedef nodoLis *ListaStrings;
 //Crear lista vacìa
 void CrearListaStrings (ListaStrings &L);
 
+//Destruir lista
+void DestruirListaStrings (ListaStrings &L);
+
 //Agregar elemento al inicio
 void InsFrontListaStrings (strings str, ListaStrings &L);
 

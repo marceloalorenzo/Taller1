@@ -6,10 +6,21 @@ void CrearListaStrings (ListaStrings &L)
     L = NULL;
 }
 
+//Destruir lista
+void DestruirListaStrings (ListaStrings &L)
+{
+    while (L != NULL)
+    {
+        strdestruir(L->info);
+        L = L->sig;
+    }
+}
+
 //Agregar elemento al inicio
 void InsFrontListaStrings (strings str, ListaStrings &L)
 {
     ListaStrings aux = new nodoLis;
+    strcrear(aux->info);
     strcop(aux->info,str);
     aux->sig = L;
     L = aux;
@@ -51,7 +62,6 @@ void MostrarListaStrings (ListaStrings L)
 void Parseo (strings str,ListaStrings &parseo)
 {
     strings aux;
-    strcrear(aux);
     int i = 0;
     while (str[i] != '\0')
     {
@@ -62,11 +72,12 @@ void Parseo (strings str,ListaStrings &parseo)
         else
         {
             fflush(stdin);
+            strcrear(aux);
             scan_palabra(str,aux,i);
             InsBackListaStrings(aux,parseo);
+            strdestruir(aux);
         }
     }
-    strdestruir(aux);
 }
 
 int LargoListaStrings (ListaStrings lis)
