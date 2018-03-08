@@ -1,11 +1,23 @@
 #include <stdio.h>
-#include "Compilar.h"
-#include "Ejecutar.h"
+#include "Comando.h"
 
-const strings EXTEVAR = ".vars";
-const strings EXTEINS = ".inst";
 
 int main()
+{
+    strings comandoEntero;
+    strcrear(comandoEntero);
+    boolean salir = FALSE;
+    do{
+        printf("**********");
+        printf("\nIngrese un comando: ");
+        scan(comandoEntero);
+        Comando(comandoEntero);
+
+    }while (salir != TRUE);
+}
+/*
+const strings EXTEVAR = ".vars";
+const strings EXTEINS = ".inst";
 {
     strings prueba;
     strcrear(prueba);
