@@ -354,3 +354,17 @@
 1520461601 c:\users\mlorenzo\documents\github\taller1\ejecutar.h
 	"Archivo.h"
 
+1520477395 source:c:\users\mlorenzo\documents\github\taller1\comando.cpp
+	"Comando.h"
+
+1520477395 c:\users\mlorenzo\documents\github\taller1\comando.h
+	"Compilar.h"
+	"Ejecutar.h"
+	"Salir.h"
+
+1520217214 c:\users\mlorenzo\documents\github\taller1\salir.h
+	"Archivo.h"
+
+1520470301 source:c:\users\mlorenzo\documents\github\taller1\salir.cpp
+	"Salir.h"
+

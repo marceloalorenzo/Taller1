@@ -7,13 +7,13 @@ int main()
     strings comandoEntero;
     strcrear(comandoEntero);
     boolean salir = FALSE;
-    do{
-        printf("**********");
+    do  {
+        printf("*******************");
         printf("\nIngrese un comando: ");
         scan(comandoEntero);
-        Comando(comandoEntero);
+        Comando(comandoEntero,salir);
 
-    }while (salir != TRUE);
+        }while (salir != TRUE);
 }
 /*
 const strings EXTEVAR = ".vars";
@@ -54,7 +54,6 @@ const strings EXTEINS = ".inst";
     MostrarListaInstrucciones(instrucciones);
     printf("\n\n********************** End Instrucciones **********************\n");
 */
-}
 
 /*
 int main ()

@@ -4,6 +4,6 @@
 #include "Ejecutar.h"
 #include "Salir.h"
 
-void Comando (strings str,boolean &salir);
+void Comando (strings str, boolean &salir);
 
 #endif // COMANDO_H_INCLUDED

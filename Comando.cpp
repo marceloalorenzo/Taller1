@@ -10,7 +10,6 @@ void Comando (strings str, boolean &salir)
     boolean errorComando = FALSE;
     while (comando != NULL && errorComando != TRUE)
         {
-
             if ( streq(comando->info,"COMPILAR")== TRUE)
             {
                 {
@@ -19,7 +18,7 @@ void Comando (strings str, boolean &salir)
                         comando = comando->sig;
                         if ( esStringDeCaracteres(comando->info) == TRUE )
                         {
-                            Compilar(comando->info),
+                            Compilar(comando->info);
                         }
                         else
                         {
@@ -34,52 +33,52 @@ void Comando (strings str, boolean &salir)
                         system ("pause");
                     }
                 }
-                break;
-                case "EJECUTAR":    {
-                                        if (LargoListaStrings(comando) == 2)
-                                        {
-                                            comando = comando->sig;
-                                            if ( esStringDeCaracteres(comando->info) == TRUE )
-                                            {
-                                                Ejecutar(comando->info);
-                                            }
-                                            else
-                                            {
-                                                errorComando = TRUE;
-                                                printf("\nEl nombre del archivo no contiene solo caracteres\n");
-                                                system("pause");
-                                            }
-                                        }
-                                        else
-                                        {
-                                            errorComando = TRUE;
-                                            printf("\nEl comando no contiene las 2 palabras solicitadas\n");
-                                            system ("pause");
-
-                                        }
-                                    }
-                                    break;
-                case "SALIR":       {
-                                        if (LargoListaStrings(comando) == 1)
-                                        {
-                                            salir = TRUE;
-                                            Salir(comando);
-                                        }
-                                        else
-                                        {
-                                            errorComando = TRUE;
-                                            printf("\nComando incorrecto\n");
-                                            system("pause");
-                                        }
-                                    }
-                                    break;
-                case default:       {
-                                        errorComando = TRUE;
-                                        printf("\nComando incorrecto\n");
-                                        system("pause");
-                                    }
             }
+            if ( streq(comando->info,"EJECUTAR")== TRUE)
+            {
+                {
+                    if (LargoListaStrings(comando) == 2)
+                    {
+                        comando = comando->sig;
+                        if ( esStringDeCaracteres(comando->info) == TRUE )
+                        {
+                            Ejecutar(comando->info);
+                        }
+                        else
+                        {
+                            errorComando = TRUE;
+                            printf("\nEl nombre del archivo no contiene solo caracteres\n");
+                            system("pause");
+                        }
+                    }
+                    else
+                    {
+                        errorComando = TRUE;
+                        printf("\nEl comando no contiene las 2 palabras solicitadas\n");
+                        system ("pause");
 
+                    }
+                }
+             }
+            if ( streq(comando->info,"SALIR")== TRUE)
+            {
+                if (LargoListaStrings(comando) == 1)
+                {
+                    salir = TRUE;
+                    Salir(comando->info);
+                }
+                else
+                {
+                    errorComando = TRUE;
+                    printf("\nComando incorrecto\n");
+                    system("pause");
+                }
+            }
+            else
+            {
+                errorComando = TRUE;
+                printf("\nComando incorrecto\n");
+                system("pause");
+            }
         }
-
 }
