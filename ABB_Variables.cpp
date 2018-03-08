@@ -153,11 +153,11 @@ int darValorVariable (ArbolVariables variables, strings nombre)
         {
             if (strmen(nombre,aux))
             {
-                darValorVariable(variables->hizq,nombre);
+                return darValorVariable(variables->hizq,nombre);
             }
             else
             {
-                darValorVariable(variables->hder,nombre);
+                return darValorVariable(variables->hder,nombre);
             }
         }
         strdestruir(aux);

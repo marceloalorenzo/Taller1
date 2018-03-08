@@ -28,7 +28,7 @@ void Ejecutar (strings str)
 
      boolean errorEjecucion = FALSE;
 
-        while ( variables != NULL && errorEjecucion != TRUE) //mientras la liesta no sea nula ingreso al nodo
+        while ( instrucciones != NULL && errorEjecucion != TRUE) //mientras la liesta no sea nula ingreso al nodo
         {
             tipoInstruccion tipoFunc = darTipoInst(instrucciones->info);
             switch (tipoFunc)
@@ -83,7 +83,7 @@ void Ejecutar (strings str)
             case FUNCVALVAR:
                             {
                                 int resultado;
-                                EjecutarFuncVarVar(instrucciones->info,variables,errorEjecucion,resultado);
+                                EjecutarFuncValVar(instrucciones->info,variables,errorEjecucion,resultado);
                                 if (errorEjecucion != TRUE)
                                 {
                                     CargarValorVariable(variables,instrucciones->info.datoDisc.asig6.variable,resultado);
@@ -91,7 +91,11 @@ void Ejecutar (strings str)
                             }
                 break;
             }
+            instrucciones = instrucciones->sig;
         }
+        printf("\n\n********************** Variables **********************\n");
+        MostrarVariablesTodas(variables);
+        printf("\n\n********************** End Variables **********************\n");
     }
     else
     {
@@ -389,7 +393,7 @@ int EjecutarFuncVarVal (instruccion ins, ArbolVariables variables)
 
 void EjecutarFuncValVar (instruccion ins, ArbolVariables variables, boolean &errorEjecucion, int &resultado)
 {
-    switch (ins.datoDisc.asig4.funcion)
+    switch (ins.datoDisc.asig6.funcion)
     {
         case SUM:
                     {

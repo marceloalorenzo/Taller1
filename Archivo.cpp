@@ -310,8 +310,8 @@ void LevantarStringsArchivo (strings &s, FILE * f) /* Precondición: El archivo 
     fscanf(f, "%c", &aux[i]);
     while (!feof(f) && aux[i] != '\n' && i < MAX )
     {
-        i++;
-        fscanf(f, "%c", &aux[i]);
+            i++;
+            fscanf(f, "%c", &aux[i]);
     }
 
     aux[i-1] = '\0';

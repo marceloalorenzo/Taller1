@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "Compilar.h"
+#include "Ejecutar.h"
 
 const strings EXTEVAR = ".vars";
 const strings EXTEINS = ".inst";
@@ -10,9 +11,7 @@ int main()
     strcrear(prueba);
     prueba = "Archivo";
 
-    Compilar(prueba);
-
-/*
+//    Compilar(prueba);
     ArbolVariables variables;
     crearABBvariable(variables);
     ListaInstrucciones instrucciones;
@@ -33,11 +32,12 @@ int main()
     LevantarAbb(variables,auxVars);
 
     LevantarLista(instrucciones,auxInst);
+    Ejecutar(prueba);
 
     printf("\n\n********************** Variables **********************\n");
     MostrarVariablesTodas(variables);
     printf("\n\n********************** End Variables **********************\n");
-
+/*
     printf("\n\n********************** Instrucciones **********************\n");
     MostrarListaInstrucciones(instrucciones);
     printf("\n\n********************** End Instrucciones **********************\n");

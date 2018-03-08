@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1520395285 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
+1520467954 source:c:\users\usuario\documents\github\taller1\abb_variables.cpp
 	"ABB_Variables.h"
 
 1520395274 c:\users\usuario\documents\github\taller1\abb_variables.h
@@ -15,7 +15,7 @@
 1519427234 c:\users\usuario\documents\github\taller1\boolean.h
 	<stdio.h>
 
-1520379962 source:c:\users\usuario\documents\github\taller1\archivo.cpp
+1520463705 source:c:\users\usuario\documents\github\taller1\archivo.cpp
 	"Archivo.h"
 
 1520040108 c:\users\usuario\documents\github\taller1\archivo.h
@@ -75,7 +75,7 @@
 1520049978 source:c:\users\usuario\documents\github\taller1\func_valval.cpp
 	"Func_ValVal.h"
 
-1520037525 source:c:\users\usuario\documents\github\taller1\func_valvar.cpp
+1520465365 source:c:\users\usuario\documents\github\taller1\func_valvar.cpp
 	"Func_ValVar.h"
 
 1520037935 source:c:\users\usuario\documents\github\taller1\func_varval.cpp
@@ -102,11 +102,12 @@
 1519527060 source:c:\users\usuario\documents\github\taller1\tipo_instrucciones.cpp
 	"Tipo_Instrucciones.h"
 
-1520388368 source:c:\users\usuario\documents\github\taller1\main.cpp
+1520467027 source:c:\users\usuario\documents\github\taller1\main.cpp
 	<stdio.h>
 	"Compilar.h"
+	"Ejecutar.h"
 
-1520038655 source:c:\users\usuario\documents\github\taller1\variables.cpp
+1520467509 source:c:\users\usuario\documents\github\taller1\variables.cpp
 	"Variables.h"
 
 1519645787 source:c:\users\pyxis infra\documents\github\taller1\abb_variables.cpp
@@ -341,7 +342,7 @@
 1520217214 source:c:\users\mlorenzo\documents\github\taller1\variables.cpp
 	"Variables.h"
 
-1520403208 source:c:\users\usuario\documents\github\taller1\ejecutar.cpp
+1520468324 source:c:\users\usuario\documents\github\taller1\ejecutar.cpp
 	"Ejecutar.h"
 
 1520402788 c:\users\usuario\documents\github\taller1\ejecutar.h
