@@ -368,3 +368,140 @@
 1520470301 source:c:\users\mlorenzo\documents\github\taller1\salir.cpp
 	"Salir.h"
 
+1520469840 source:c:\users\java\desktop\taller1\abb_variables.cpp
+	"ABB_Variables.h"
+
+1520461602 c:\users\java\desktop\taller1\abb_variables.h
+	"Variables.h"
+
+1520217216 c:\users\java\desktop\taller1\variables.h
+	"StringDinamico.h"
+
+1520390092 c:\users\java\desktop\taller1\stringdinamico.h
+	"boolean.h"
+	<stdlib.h>
+
+1520217216 c:\users\java\desktop\taller1\boolean.h
+	<stdio.h>
+
+1520469840 source:c:\users\java\desktop\taller1\archivo.cpp
+	"Archivo.h"
+
+1520217216 c:\users\java\desktop\taller1\archivo.h
+	"ABB_Variables.h"
+	"Lista_Instrucciones.h"
+	"Lista_string.h"
+
+1520217216 c:\users\java\desktop\taller1\lista_instrucciones.h
+	"Instrucciones.h"
+
+1520461602 c:\users\java\desktop\taller1\instrucciones.h
+	"Tipo_Instrucciones.h"
+	"Asig_Val.h"
+	"Asig_Var.h"
+	"Func_ValVal.h"
+	"Func_ValVar.h"
+	"Func_VarVal.h"
+	"Func_VarVar.h"
+
+1520217216 c:\users\java\desktop\taller1\tipo_instrucciones.h
+
+1520217216 c:\users\java\desktop\taller1\asig_val.h
+	"StringDinamico.h"
+
+1520217216 c:\users\java\desktop\taller1\asig_var.h
+	"StringDinamico.h"
+
+1520217216 c:\users\java\desktop\taller1\func_valval.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1520217216 c:\users\java\desktop\taller1\tipo_funciones.h
+
+1520217216 c:\users\java\desktop\taller1\func_valvar.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1520217216 c:\users\java\desktop\taller1\func_varval.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1520217216 c:\users\java\desktop\taller1\func_varvar.h
+	"Tipo_Funciones.h"
+	"StringDinamico.h"
+
+1520390092 c:\users\java\desktop\taller1\lista_string.h
+	"StringDinamico.h"
+
+1520217216 source:c:\users\java\desktop\taller1\asig_val.cpp
+	"Asig_Val.h"
+
+1520217216 source:c:\users\java\desktop\taller1\asig_var.cpp
+	"Asig_Var.h"
+
+1520217216 source:c:\users\java\desktop\taller1\boolean.cpp
+
+1520549681 source:c:\users\java\desktop\taller1\comando.cpp
+	"Comando.h"
+
+1520477396 c:\users\java\desktop\taller1\comando.h
+	"Compilar.h"
+	"Ejecutar.h"
+	"Salir.h"
+
+1520390092 c:\users\java\desktop\taller1\compilar.h
+	"Archivo.h"
+	"Lista_string.h"
+
+1520461602 c:\users\java\desktop\taller1\ejecutar.h
+	"Archivo.h"
+
+1520217216 c:\users\java\desktop\taller1\salir.h
+	"Archivo.h"
+
+1520392130 source:c:\users\java\desktop\taller1\compilar.cpp
+	"Compilar.h"
+
+1520469840 source:c:\users\java\desktop\taller1\ejecutar.cpp
+	"Ejecutar.h"
+
+1520217216 source:c:\users\java\desktop\taller1\func_valval.cpp
+	"Func_ValVal.h"
+
+1520217216 source:c:\users\java\desktop\taller1\func_valvar.cpp
+	"Func_ValVar.h"
+
+1520217216 source:c:\users\java\desktop\taller1\func_varval.cpp
+	"Func_VarVal.h"
+
+1520217216 source:c:\users\java\desktop\taller1\func_varvar.cpp
+	"Func_VarVar.h"
+
+1520461602 source:c:\users\java\desktop\taller1\instrucciones.cpp
+	"Instrucciones.h"
+
+1520217216 source:c:\users\java\desktop\taller1\lista_instrucciones.cpp
+	"Lista_Instrucciones.h"
+
+1520390092 source:c:\users\java\desktop\taller1\lista_string.cpp
+	"Lista_string.h"
+
+1520549563 source:c:\users\java\desktop\taller1\main.cpp
+	<stdio.h>
+	"Comando.h"
+
+1520550127 source:c:\users\java\desktop\taller1\stringdinamico.cpp
+	"StringDinamico.h"
+
+1520217216 source:c:\users\java\desktop\taller1\tipo_funciones.cpp
+	"Tipo_Funciones.h"
+
+1520217216 source:c:\users\java\desktop\taller1\tipo_instrucciones.cpp
+	"Tipo_Instrucciones.h"
+
+1520217216 source:c:\users\java\desktop\taller1\variables.cpp
+	"Variables.h"
+
+1520470302 source:c:\users\java\desktop\taller1\salir.cpp
+	"Salir.h"
+

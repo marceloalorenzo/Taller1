@@ -160,7 +160,7 @@ boolean esStringDeCaracteres(strings s1)
     boolean caracter = TRUE;
     while (caracter && s1[i] != '\0')
     {
-        if (('a' <= s1[i] && 'z' >= s1[1]) || ('A' <= s1[i] && 'Z' >= s1[1]))
+        if (('a' <= s1[i] && 'z' >= s1[i]) || ('A' <= s1[i] && 'Z' >= s1[i]))
             i++;
         else
             caracter = FALSE;

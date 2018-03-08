@@ -10,8 +10,10 @@ int main()
     do  {
         printf("*******************");
         printf("\nIngrese un comando: ");
+        fflush(stdin);
         scan(comandoEntero);
         Comando(comandoEntero,salir);
+
 
         }while (salir != TRUE);
 }

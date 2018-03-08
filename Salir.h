@@ -2,6 +2,6 @@
 #define SALIR_H_INCLUDED
 #include "Archivo.h"
 
-void Salir (strings str);
+void Salir ();
 
 #endif // SALIR_H_INCLUDED

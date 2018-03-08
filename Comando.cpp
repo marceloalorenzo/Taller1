@@ -8,7 +8,7 @@ void Comando (strings str, boolean &salir)
     Parseo(str,comando);
 
     boolean errorComando = FALSE;
-    while (comando != NULL && errorComando != TRUE)
+    while (comando != NULL && errorComando != TRUE && salir != TRUE)
         {
             if ( streq(comando->info,"COMPILAR")== TRUE)
             {
@@ -34,7 +34,7 @@ void Comando (strings str, boolean &salir)
                     }
                 }
             }
-            if ( streq(comando->info,"EJECUTAR")== TRUE)
+            else if ( streq(comando->info,"EJECUTAR")== TRUE)
             {
                 {
                     if (LargoListaStrings(comando) == 2)
@@ -60,12 +60,12 @@ void Comando (strings str, boolean &salir)
                     }
                 }
              }
-            if ( streq(comando->info,"SALIR")== TRUE)
+            else if ( streq(comando->info,"SALIR")== TRUE)
             {
                 if (LargoListaStrings(comando) == 1)
                 {
                     salir = TRUE;
-                    Salir(comando->info);
+                    Salir();
                 }
                 else
                 {
