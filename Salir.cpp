@@ -3,6 +3,6 @@
 
 void Salir ()
 {
-    printf("\n Saliendo del programa. . . . . . . .\n");
+    printf("\n\nSaliendo del programa. . . . . . . .\n\n");
     system("pause");
 }

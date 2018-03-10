@@ -33,9 +33,8 @@ void Ejecutar (strings str)
             tipoInstruccion tipoFunc = darTipoInst(instrucciones->info);
             switch (tipoFunc)
             {
-          //obtengo el dato cargado en el discriminante
-            case LEER:  //Obtengo el nombre de la variable guardada en la compilación
-                            {//agregar control con while
+            case LEER:
+                            {
                                 int lectura;
                                 printf("\nIngrese un numero entero: ");
                                 scanf("%d", &lectura);
@@ -93,188 +92,16 @@ void Ejecutar (strings str)
             }
             instrucciones = instrucciones->sig;
         }
-        printf("\n\n********************** Variables **********************\n");
-        MostrarVariablesTodas(variables);
-        printf("\n\n********************** End Variables **********************\n");
     }
     else
     {
-        printf("\n\nERROR, no existen uno de los archivos .csim o .vars\n\n");
+        printf("\n\nError de ejecucion: El programa no fue compilado correctamente.\nNo existen alguno o ambos de los archivos .inst o .vars)\n\n");
         system("pause");
     }
 }
-                                /*
-                case FUNCVARVAR:
-                                {
-                                     switch(tipoFuncion)
-                                case SUM:
-                                            {
-                                                Obtengo los nombres de las variables guardados en param1 y param2
-                                                Busco en el ABB el valor guardado para la variable del param1
-                                                Busco en el ABB el valor guardado para la variable del param2
-                                                Realizo la suma de param1 + param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case RES:
-                                            {
-                                                Obtengo los nombres de las variables guardados en param1 y param2
-                                                Busco en el ABB el valor guardado para la variable del param1
-                                                Busco en el ABB el valor guardado para la variable del param2
-                                                Realizo la resta de param1 - param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case MUL:
-                                            {
-                                                Obtengo los nombres de las variables guardados en param1 y param2
-                                                Busco en el ABB el valor guardado para la variable del param1
-                                                Busco en el ABB el valor guardado para la variable del param2
-                                                Realizo la multiplicación de param1 * param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case DIV:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param2
-                                                Busco en el ABB el valor guardado para la variable del param2
-
-                                                SI	param2 es igual a cero	ENTONCES
-                                                    Error de ejecución (El segundo término no puede ser cero)
-                                                    Finalizo ejecución
-                                                SINO
-                                                    Obtengo el nombre de la variable guardada en param1
-                                                    Busco en el ABB el valor guardado para la variable del param1
-                                                    Realizo la división de param1 / param2
-                                                    Guardo el valor en un auxiliar
-                                                    Obtengo el nombre de la variable del campo variable
-                                                    Busco en el ABB la variable
-                                                    Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                                FIN SI
-
-                                            }
-                                            break;
-                                }
-                                break;
-                case FUNCVARVAL:
-                                {
-                                     switch(tipoFuncion)
-                                case SUM:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param1
-                                                Busco en el ABB el valor guardado para la variable del param1
-                                                Realizo la suma de param1 + param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case RES:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param1
-                                                Busco en el ABB el valor guardado para la variable del param1
-                                                Realizo la resta de param1 - param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case MUL:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param1
-                                                Busco en el ABB el valor guardado para la variable del param1
-                                                Realizo la multiplicación de param1 * param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case DIV:
-                                            {
-                                            SI	param2 es igual a cero	ENTONCES
-                                                Error de ejecución (El segundo término no puede ser cero)
-                                                Finalizo ejecución
-                                            SINO
-                                                Obtengo el nombre de la variable guardada en param1
-                                                Busco en el ABB el valor guardado para la variable del param1
-                                                Realizo la división de param1 / param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            FIN SI
-                                            }
-                                            break;
-                                }
-                                break;
-                case FUNCVALVAR:
-                                {
-                                     switch(tipoFuncion)
-                                case SUM:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param2
-                                                Busco en el ABB el valor guardado para la variable del param2
-                                                Realizo la suma de param1 + param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case RES:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param
-                                                Busco en el ABB el valor guardado para la variable del param2
-                                                Realizo la resta de param1 - param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case MUL:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param2
-                                                Busco en el ABB el valor guardado para la variable del param2
-                                                Realizo la multiplicación de param1 * param2
-                                                Guardo el valor en un auxiliar
-                                                Obtengo el nombre de la variable del campo variable
-                                                Busco en el ABB la variable
-                                                Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                            }
-                                            break;
-                                case DIV:
-                                            {
-                                                Obtengo el nombre de la variable guardada en param2
-                                                Busco en el ABB el valor guardado para la variable del param2
-
-                                                SI	param2 es igual a cero	ENTONCES
-                                                    Error de ejecución (El segundo término no puede ser cero)
-                                                    Finalizo ejecución
-                                                SINO
-                                                    Realizo la división de param1 / param2
-                                                    Guardo el valor en un auxiliar
-                                                    Obtengo el nombre de la variable del campo variable
-                                                    Busco en el ABB la variable
-                                                    Guardo en el campo valor de la variable en el ABB el resultado de la suma anterior
-                                                FIN SI
-                                            }
-                                            break;*/
 
 
-
+/* ********************** Auxiliares para ejecutar las funciones ********************************** */
 
 int EjecutarFuncValVal (instruccion ins)
 {
@@ -348,7 +175,10 @@ void EjecutarFuncVarVar (instruccion ins, ArbolVariables variables, boolean &err
                         {
                             resultado = 0;
                             errorEjecucion = TRUE;
-                            printf("\n\nError de ejecucion: El parametro 2 en funcion DIV no puede ser cero.\n\n");
+                            printf("\n\nError de ejecucion: El parametro 2 en funcion DIV no puede ser cero.\n");
+                            printf("\t\t    ");
+                            MostrarValorVariable(variables,ins.datoDisc.asig4.param2);
+                            printf("\n");
                             system ("pause");
                         }
                     }
@@ -428,7 +258,10 @@ void EjecutarFuncValVar (instruccion ins, ArbolVariables variables, boolean &err
                         {
                             resultado = 0;
                             errorEjecucion = TRUE;
-                            printf("\n\nError de ejecucion: El parametro 2 en funcion DIV no puede ser cero.\n\n");
+                            printf("\n\nError de ejecucion: El parametro 2 en funcion DIV no puede ser cero.\n");
+                            printf("\t\t    ");
+                            MostrarValorVariable(variables,ins.datoDisc.asig4.param2);
+                            printf("\n");
                             system ("pause");
                         }
                     }

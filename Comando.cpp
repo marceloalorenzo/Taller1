@@ -13,9 +13,9 @@ void Comando (strings str, boolean &salir)
         if ( streq(comando->info,"COMPILAR")== TRUE)
         {
             {
-                if (LargoListaStrings(comando) == 2)
+                comando = comando->sig;
+                if (LargoListaStrings(comando) == 1)
                 {
-                    comando = comando->sig;
                     if ( esStringDeCaracteres(comando->info) == TRUE )
                     {
                         Compilar(comando->info);
@@ -24,14 +24,17 @@ void Comando (strings str, boolean &salir)
                     else
                     {
                         errorComando = TRUE;
-                        printf("\nEl nombre del archivo no contiene solo caracteres\n");
+                        printf("\n\nError en comando: El nombre del archivo ''");
+                        print(comando->info);
+                        printf("'' no contiene solo caracteres\n\n");
                         system("pause");
                     }
                 }
                 else
                 {
-                    printf("\nEl comando no contiene las 2 palabras solicitadas\n");
-                    system ("pause");
+                    errorComando = TRUE;
+                    printf("\n\nError en comando: El nombre del archivo para compilar no se ingreso o posee mas de una palabra\n\n");
+                    system("pause");
                 }
             }
         }
@@ -39,9 +42,9 @@ void Comando (strings str, boolean &salir)
         {
             if ( streq(comando->info,"EJECUTAR")== TRUE)
             {
-                if (LargoListaStrings(comando) == 2)
+                comando = comando->sig;
+                if (LargoListaStrings(comando) == 1)
                 {
-                    comando = comando->sig;
                     if ( esStringDeCaracteres(comando->info) == TRUE )
                     {
                         Ejecutar(comando->info);
@@ -50,15 +53,17 @@ void Comando (strings str, boolean &salir)
                     else
                     {
                         errorComando = TRUE;
-                        printf("\nEl nombre del archivo no contiene solo caracteres\n");
+                        printf("\n\nError en comando: El nombre del archivo ''");
+                        print(comando->info);
+                        printf("'' no contiene solo caracteres\n\n");
                         system("pause");
                     }
                 }
                 else
                 {
                     errorComando = TRUE;
-                    printf("\nEl comando no contiene las 2 palabras solicitadas\n");
-                    system ("pause");
+                    printf("\n\nError en comando: El nombre del archivo para ejecutar no se ingreso o posee mas de una palabra\n\n");
+                    system("pause");
                 }
             }
             else
@@ -73,14 +78,14 @@ void Comando (strings str, boolean &salir)
                     else
                     {
                         errorComando = TRUE;
-                        printf("\nComando incorrecto\n");
+                        printf("\n\nError en comando: El Comando indicado no es correcto\n\n");
                         system("pause");
                     }
                 }
                 else
                 {
                     errorComando = TRUE;
-                    printf("\nComando incorrecto\n");
+                    printf("\n\nComando incorrecto\n\n");
                     system("pause");
                 }
             }

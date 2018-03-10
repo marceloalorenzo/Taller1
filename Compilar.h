@@ -17,7 +17,16 @@ void Compilar (strings nombreArchivo);
 void compilarVariables (ListaStrings str, ArbolVariables &variables, boolean &errorEnVariables);
 
 //Genera la lista de instrucciones
-void compilarInstrucciones (ArbolVariables variables, ListaStrings str, ListaInstrucciones &instrucciones, boolean &errorEnInstruccion);
+void compilarInstrucciones (ArbolVariables variables, ListaStrings &Parseado, ListaInstrucciones &instrucciones, boolean &errorEnInstruccion, int linea);
+
+//Carga asignaciòn 1 y 2
+void asignar (ListaInstrucciones &instrucciones, ArbolVariables variables, ListaStrings &Parseado, instruccion inst, boolean &errorEnInstruccion, int linea);
+
+//Cargar funciones
+void asignarFunciones (ArbolVariables variables, ListaInstrucciones &instrucciones, ListaStrings &Parseado, instruccion inst, boolean &errorEnInstruccion, int linea);
+
+// Verifica que tipo de funcion es y carga la instruccion
+void asignarFuncionesAux (ArbolVariables variables, ListaInstrucciones &instrucciones,ListaStrings &Parseado, instruccion inst, boolean &errorEnInstruccion, tipoFuncion tipo, strings auxVar, int linea);
 
 
 #endif // COMPILAR_H_INCLUDED
