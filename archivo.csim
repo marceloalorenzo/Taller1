@@ -7,10 +7,12 @@ seg = 5
 ter = cuar
 quin = SUM seg cuar
 sex = RES quin sept
+MOSTRAR ter
 sept = MUL sex prim
-octa = DIV ter seg
+octa = DIV ter cuar
 quin = SUM 5 0
 sex = RES 8 3
+MOSTRAR octa
 sept = MUL 3 2
 octa = DIV 9 3
 quin = SUM prim 0

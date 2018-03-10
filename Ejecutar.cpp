@@ -92,6 +92,8 @@ void Ejecutar (strings str)
             }
             instrucciones = instrucciones->sig;
         }
+        if (errorEjecucion == FALSE)
+            system("pause");
     }
     else
     {
