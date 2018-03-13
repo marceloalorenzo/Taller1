@@ -10,7 +10,7 @@ void Comando (strings str, boolean &salir)
     boolean errorComando = FALSE;
     while (comando != NULL && errorComando != TRUE && salir != TRUE)
     {
-        if (streq(comando->info,"COMPILAR")== TRUE || streq(comando->info,"compilar")== TRUE)
+        if (streq(comando->info,"COMPILAR") == TRUE || streq(comando->info,"compilar") == TRUE)
         {
             {
                 comando = comando->sig;
