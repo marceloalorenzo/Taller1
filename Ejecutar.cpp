@@ -35,9 +35,23 @@ void Ejecutar (strings str)
             {
             case LEER:
                             {
-                                int lectura;
+                                strings ingreso;
+                                strcrear(ingreso);
+
                                 printf("\nIngrese un numero entero: ");
-                                scanf("%d", &lectura);
+                                fflush(stdin);
+                                scan(ingreso);
+                                boolean entero = esStringNumerico(ingreso);
+
+                                while (entero != TRUE)
+                                {
+                                    printf("\n\nEl valor ingresado no es un entero.\n***Favor ingresar un numero entero: ");
+                                    fflush(stdin);
+                                    scan(ingreso);
+                                    entero = esStringNumerico(ingreso);
+                                }
+
+                                int lectura = ConvertirStringEntero(ingreso);
                                 CargarValorVariable(variables,instrucciones->info.datoDisc.variable1,lectura);//
                             }
                 break;

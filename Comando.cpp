@@ -10,7 +10,7 @@ void Comando (strings str, boolean &salir)
     boolean errorComando = FALSE;
     while (comando != NULL && errorComando != TRUE && salir != TRUE)
     {
-        if ( streq(comando->info,"COMPILAR")== TRUE)
+        if (streq(comando->info,"COMPILAR")== TRUE || streq(comando->info,"compilar")== TRUE)
         {
             {
                 comando = comando->sig;
@@ -40,7 +40,7 @@ void Comando (strings str, boolean &salir)
         }
         else
         {
-            if ( streq(comando->info,"EJECUTAR")== TRUE)
+            if (streq(comando->info,"EJECUTAR")== TRUE || streq(comando->info,"ejecutar")== TRUE)
             {
                 comando = comando->sig;
                 if (LargoListaStrings(comando) == 1)
@@ -68,7 +68,7 @@ void Comando (strings str, boolean &salir)
             }
             else
             {
-                if ( streq(comando->info,"SALIR")== TRUE)
+                if (streq(comando->info,"SALIR")== TRUE || streq(comando->info,"salir")== TRUE)
                 {
                     if (LargoListaStrings(comando) == 1)
                     {

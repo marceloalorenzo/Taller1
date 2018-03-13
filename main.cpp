@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "Comando.h"
 
-
 int main()
 {
     strings comandoEntero;

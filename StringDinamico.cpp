@@ -183,6 +183,7 @@ boolean esStringNumerico(strings s1)
     return numerico;
 }
 
+
 int ConvertirStringEntero (strings str)
 {
     return atoi(str);

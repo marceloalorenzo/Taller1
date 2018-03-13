@@ -8,7 +8,7 @@
 1520217216 c:\users\usuario\documents\github\taller1\variables.h
 	"StringDinamico.h"
 
-1520390092 c:\users\usuario\documents\github\taller1\stringdinamico.h
+1520910120 c:\users\usuario\documents\github\taller1\stringdinamico.h
 	"boolean.h"
 	<stdlib.h>
 
@@ -93,7 +93,7 @@
 1520390092 source:c:\users\usuario\documents\github\taller1\lista_string.cpp
 	"Lista_string.h"
 
-1520641222 source:c:\users\usuario\documents\github\taller1\stringdinamico.cpp
+1520910120 source:c:\users\usuario\documents\github\taller1\stringdinamico.cpp
 	"StringDinamico.h"
 
 1520217216 source:c:\users\usuario\documents\github\taller1\tipo_funciones.cpp
@@ -102,7 +102,7 @@
 1520217216 source:c:\users\usuario\documents\github\taller1\tipo_instrucciones.cpp
 	"Tipo_Instrucciones.h"
 
-1520711130 source:c:\users\usuario\documents\github\taller1\main.cpp
+1520910120 source:c:\users\usuario\documents\github\taller1\main.cpp
 	<stdio.h>
 	"Comando.h"
 
@@ -338,7 +338,7 @@
 1520217216 source:c:\users\mlorenzo\documents\github\taller1\variables.cpp
 	"Variables.h"
 
-1520713604 source:c:\users\usuario\documents\github\taller1\ejecutar.cpp
+1520714086 source:c:\users\usuario\documents\github\taller1\ejecutar.cpp
 	"Ejecutar.h"
 
 1520461602 c:\users\usuario\documents\github\taller1\ejecutar.h
@@ -638,7 +638,7 @@
 1520711022 source:c:\users\usuario\desktop\facultad\taller 1\taller1 final\compilar.cpp
 	"Compilar.h"
 
-1520712718 source:c:\users\usuario\documents\github\taller1\comando.cpp
+1520910248 source:c:\users\usuario\documents\github\taller1\comando.cpp
 	"Comando.h"
 
 1520641222 c:\users\usuario\documents\github\taller1\comando.h
