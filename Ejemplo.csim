@@ -1,8 +1,0 @@
-PROGRAMA Ejemplo
-VARIABLES num x resu
-INSTRUCCIONES
-LEER x
-num = x
-MOSTRAR num
-resu = DIV 40 num
-MOSTRAR resu#

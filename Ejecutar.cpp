@@ -38,14 +38,18 @@ void Ejecutar (strings str)
                                 strings ingreso;
                                 strcrear(ingreso);
 
-                                printf("\nIngrese un numero entero: ");
+                                printf("\nIngrese valor para ");
+                                print(instrucciones->info.datoDisc.variable1);
+                                printf(": ");
                                 fflush(stdin);
                                 scan(ingreso);
                                 boolean entero = esStringNumerico(ingreso);
 
                                 while (entero != TRUE)
                                 {
-                                    printf("\n\nEl valor ingresado no es un entero.\n***Favor ingresar un numero entero: ");
+                                    printf("\n\nEl valor ingresado no es un entero.\n***Favor ingresar un valor entero para ");
+                                    print(instrucciones->info.datoDisc.variable1);
+                                    printf(": ");
                                     fflush(stdin);
                                     scan(ingreso);
                                     entero = esStringNumerico(ingreso);
